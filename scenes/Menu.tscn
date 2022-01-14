@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/themes/Main Menu.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Menu.gd" type="Script" id=2]
+
+[node name="Contenedor Menu" type="CenterContainer"]
+margin_left = 64.0
+margin_top = 291.0
+margin_right = 295.0
+margin_bottom = 348.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource( 2 )
+
+[node name="Boton Menu" type="Button" parent="."]
+margin_right = 231.0
+margin_bottom = 57.0
+theme = ExtResource( 1 )
+text = "A Multiplicar"
+__meta__ = {
+"_editor_description_": ""
+}

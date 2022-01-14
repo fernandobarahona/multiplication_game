@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/themes/Main Menu.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Option.gd" type="Script" id=2]
+
+[node name="op1" type="Button"]
+margin_right = 49.0
+margin_bottom = 57.0
+theme = ExtResource( 1 )
+text = "54"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
