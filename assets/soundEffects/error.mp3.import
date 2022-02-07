@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/error.mp3-e612cbb3146195d6cca5175a12a7d48e.mp3str"
+
+[deps]
+
+source_file="res://assets/soundEffects/error.mp3"
+dest_files=[ "res://.import/error.mp3-e612cbb3146195d6cca5175a12a7d48e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

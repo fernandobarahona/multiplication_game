@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/zapsplat_science_fiction_alarm_loop_024_12622.mp3-0ce68824e197c49a814b8b995cfc0ef7.mp3str"
+
+[deps]
+
+source_file="res://assets/soundEffects/zapsplat_pack_science_fiction_alarms_mp3/zapsplat_science_fiction_alarm_loop_024_12622.mp3"
+dest_files=[ "res://.import/zapsplat_science_fiction_alarm_loop_024_12622.mp3-0ce68824e197c49a814b8b995cfc0ef7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

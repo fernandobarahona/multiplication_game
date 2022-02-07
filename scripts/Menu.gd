@@ -1,12 +1,11 @@
 extends CenterContainer
 
-signal startGameSignal
+var gameScene = preload("res://scenes/Game.tscn")
 
 func _ready():
-	var err = get_node("Boton Menu").connect("pressed",self,"emitStartGameSignal")
+	var err = get_node("Boton Menu").connect("pressed",self,"startGame")
 	if err != OK:
 		print("Failure!")
 
-func emitStartGameSignal():
-	emit_signal("startGameSignal")
-
+func startGame():
+	SceneManager.gotoScene(gameScene)

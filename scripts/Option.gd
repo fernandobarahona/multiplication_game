@@ -1,15 +1,26 @@
 extends Button
 
-var arregloDeRespuestas = crearTodasLasRespuestas()
+signal respuestaSeleccionada(acierto)
+
+var miValor
+var valorCorrecto
 
 func _ready():
-	print('s')
+	var err = self.connect("pressed", self, "evaluarYReiniciar")
+	if err != 0:
+		print('error found')
 
+func evaluarYReiniciar():
+	var acierto
+	if miValor == valorCorrecto:
+		acierto = true
+	else:
+		acierto = false
+	emit_signal("respuestaSeleccionada", acierto)
 
-func crearTodasLasRespuestas():
-	var arregloDeRespuestasInner = []
-	for ii in range(11):
-		arregloDeRespuestasInner.append([])
-		for jj in range(11):
-			arregloDeRespuestasInner[ii].append(ii*jj)
-	return arregloDeRespuestasInner
+func iniciarEnNuevaPregunta(miValorIn: int, valorCorrectoIn: int):
+	miValor = miValorIn
+	valorCorrecto = valorCorrectoIn
+
+	self.set_size(Vector2(49, 57))
+	self.text = str(miValor)
