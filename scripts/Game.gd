@@ -17,6 +17,8 @@ var intentos = 0
 var aciertos = 0
 var porcentaje = 0
 
+var valorCorrecto
+
 var arregloDeRespuestas = GlobalValues.crearTodasLasRespuestas()
 
 func _ready():
@@ -24,7 +26,12 @@ func _ready():
 	for botonDeOpcion in arregloBotonesDeOpciones:
 		botonDeOpcion.connect("respuestaSeleccionada", self, "evaluarYReiniciar")
 
-func evaluarYReiniciar(acierto = true):
+func evaluarYReiniciar(valorRecibidoDeOpcionPresionada):
+	var acierto
+	if valorRecibidoDeOpcionPresionada == valorCorrecto:
+		acierto = true
+	else:
+		acierto = false
 	nuevaPregunta()
 	if acierto == true:
 		audioEffectsPlayer.stream = effectoAcierto
@@ -53,5 +60,6 @@ func nuevaPregunta():
 				nuevaOpcion = randi()%arregloDeRespuestas.size()
 			opciones[ii] = arregloDeRespuestas[nuevaOpcion]
 	for ii in 4:
-		arregloBotonesDeOpciones[ii].iniciarEnNuevaPregunta(opciones[ii], preguntaNum1 * preguntaNum2)
+		arregloBotonesDeOpciones[ii].iniciarEnNuevaPregunta(opciones[ii])
+	valorCorrecto = preguntaNum1 * preguntaNum2
 	pregunta.text = "Cuanto es "+str(preguntaNum1)+" X "+str(preguntaNum2)

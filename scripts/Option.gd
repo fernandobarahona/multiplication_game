@@ -1,26 +1,20 @@
 extends Button
 
-signal respuestaSeleccionada(acierto)
+signal respuestaSeleccionada(valor)
 
-var miValor
-var valorCorrecto
+var miValor:int
 
 func _ready():
-	var err = self.connect("pressed", self, "evaluarYReiniciar")
+	var err = self.connect("pressed", self, "enviarMiValor")
 	if err != 0:
 		print('error found')
 
-func evaluarYReiniciar():
-	var acierto
-	if miValor == valorCorrecto:
-		acierto = true
-	else:
-		acierto = false
-	emit_signal("respuestaSeleccionada", acierto)
+func enviarMiValor():
+	emit_signal("respuestaSeleccionada", miValor)
 
-func iniciarEnNuevaPregunta(miValorIn: int, valorCorrectoIn: int):
+
+func iniciarEnNuevaPregunta(miValorIn: int):
 	miValor = miValorIn
-	valorCorrecto = valorCorrectoIn
 
 	self.set_size(Vector2(49, 57))
 	self.text = str(miValor)
