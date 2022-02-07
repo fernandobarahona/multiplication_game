@@ -16,8 +16,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-SceneManager="*res://scripts/Global Singletons/SceneManager.gd"
-GlobalValues="*res://scripts/Global Singletons/GlobalValues.gd"
+SceneManager="*res://scripts/globalSingletons/SceneManager.gd"
+GlobalValues="*res://scripts/globalSingletons/GlobalValues.gd"
 
 [display]
 
