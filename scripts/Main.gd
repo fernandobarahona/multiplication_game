@@ -1,4 +1,4 @@
-extends Node2D
+extends Container
 
 var menu = preload("res://scenes/Menu.tscn")
 var menuInstance
