@@ -1,11 +1,10 @@
-extends CenterContainer
+extends CanvasLayer
 
 var gameScene = preload("res://scenes/Game.tscn")
+var matrixScene = preload("res://scenes/Matrix.tscn")
 
 func _ready():
-	var err = get_node("GoToGameBtn").connect("pressed",self,"startGame")
-	if err != OK:
-		print("Failure!")
-
+	var _err1 = get_node("VBoxContainer/GoToGameBtn").connect("pressed",self,"startGame")
+	
 func startGame():
 	SceneManager.gotoScene(gameScene)

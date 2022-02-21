@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/matrix.gd" type="Script" id=2]
+[ext_resource path="res://assets/matrix_glow_environment.tres" type="Environment" id=3]
+
+[node name="Matrix" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MatrixContainer" type="CanvasLayer" parent="."]
+
+[node name="MatrixBackground" type="ColorRect" parent="MatrixContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="MatrixContainer"]
+environment = ExtResource( 3 )
+
+[node name="ButtonContainer" type="CanvasLayer" parent="."]

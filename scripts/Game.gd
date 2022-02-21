@@ -1,17 +1,18 @@
-extends VBoxContainer
+extends CanvasLayer
 
-onready var pregunta = get_node("Contenedor Pregunta/Pregunta")
-onready var arregloBotonesDeOpciones = [
-	get_node("Opciones/Division horizontal/Division Vertical 1/op1"),
-	get_node("Opciones/Division horizontal/Division Vertical 1/op2"),	
-	get_node("Opciones/Division horizontal/Division Vertical 2/op3"),
-	get_node("Opciones/Division horizontal/Division Vertical 2/op4"),
-]
-onready var barraAciertos = get_node("barraAciertosContenedor/barraAciertos")
-onready var barraAciertosTexto = get_node("barraAciertosContenedor/textoBarraAciertos")
-onready var audioEffectsPlayer = get_node("AudioStreamPlayer2D")
+onready var pregunta = $ExternalVBoxContainer/QuestionContainer/Question
+onready var barraAciertos = $ExternalVBoxContainer/HUDContainer/ScoreBar
+onready var barraAciertosTexto = $ExternalVBoxContainer/HUDContainer/Container/ScoreBarText
+onready var audioEffectsPlayer = $ExternalVBoxContainer/GameSoundEffects
 onready var effectoAcierto = preload("res://assets/soundEffects/correct.mp3")
 onready var effectoError = preload("res://assets/soundEffects/error.mp3")
+
+onready var arregloBotonesDeOpciones = [
+	$ExternalVBoxContainer/Options/HBox/VBox1/op1,
+	$ExternalVBoxContainer/Options/HBox/VBox1/op2,
+	$ExternalVBoxContainer/Options/HBox/VBox2/op3,
+	$ExternalVBoxContainer/Options/HBox/VBox2/op4
+]
 
 var intentos = 0
 var aciertos = 0
@@ -62,4 +63,4 @@ func nuevaPregunta():
 	for ii in 4:
 		arregloBotonesDeOpciones[ii].iniciarEnNuevaPregunta(opciones[ii])
 	valorCorrecto = preguntaNum1 * preguntaNum2
-	pregunta.text = "Cuanto es "+str(preguntaNum1)+" X "+str(preguntaNum2)
+	pregunta.text = "Cuanto es \n"+str(preguntaNum1)+"X "+str(preguntaNum2)

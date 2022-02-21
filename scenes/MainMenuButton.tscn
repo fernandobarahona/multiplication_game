@@ -1,7 +1,0 @@
-[gd_scene format=2]
-
-[node name="Button" type="Button"]
-margin_left = 174.0
-margin_top = 305.0
-margin_right = 186.0
-margin_bottom = 335.0
