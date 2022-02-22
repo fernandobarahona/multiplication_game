@@ -11,13 +11,13 @@ config_version=4
 [application]
 
 config/name="TablasMultiplicar"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes_and_scripts/Main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-SceneManager="*res://scripts/globalSingletons/scene_manager.gd"
-GlobalValues="*res://scripts/globalSingletons/global_values.gd"
+SceneManager="*res://scenes_and_scripts/globalSingletons/SceneManager.gd"
+GlobalValues="*res://scenes_and_scripts/globalSingletons/GlobalValues.gd"
 
 [display]
 
