@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes_and_scripts/Main.gd" type="Script" id=1]
 [ext_resource path="res://assets/music/music_zapsplat_action_break.mp3" type="AudioStream" id=2]
-[ext_resource path="res://scenes_and_scripts/BackgroundContainer.gd" type="Script" id=3]
+[ext_resource path="res://scenes_and_scripts/backgrounds/BackgroundContainer.gd" type="Script" id=3]
 
 [node name="MainContainer" type="Container"]
 margin_right = 360.0
@@ -17,3 +17,4 @@ script = ExtResource( 3 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
+autoplay = true
