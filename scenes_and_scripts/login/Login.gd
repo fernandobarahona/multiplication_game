@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var registerScene = load("res://scenes_and_scripts/register/Register.tscn")
+var registerScene = load(GlobalValues.SCENES_AND_SCRIPTS_PATHS["scene__register"])
 
 onready var http : HTTPRequest = $HTTPRequest
 onready var username : LineEdit = $VBoxContainer/UserNameHContainer/UserNameText

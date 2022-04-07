@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes_and_scripts/login/Login.gd" type="Script" id=2]
+[ext_resource path="res://scenes_and_scripts/login/login.gd" type="Script" id=2]
+[ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/back_to_menu_button.tscn" type="PackedScene" id=3]
 
 [node name="Login" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -78,6 +79,12 @@ margin_bottom = 232.0
 text = "Create New User"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Button" parent="." instance=ExtResource( 3 )]
+margin_left = 108.0
+margin_top = 570.0
+margin_right = 253.0
+margin_bottom = 600.0
 
 [connection signal="pressed" from="VBoxContainer/LoginButton" to="." method="_on_LoginButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoToRegisterButton" to="." method="_on_GoToRegisterButton_pressed"]

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var logInScene = load("res://scenes_and_scripts/login/Login.tscn")
+var logInScene = load(GlobalValues.SCENES_AND_SCRIPTS_PATHS["scene__login"])
 
 onready var http : HTTPRequest = $HTTPRequest
 onready var username : LineEdit = $VBoxContainer/UserNameHContainer/UserNameText

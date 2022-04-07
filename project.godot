@@ -11,14 +11,15 @@ config_version=4
 [application]
 
 config/name="TablasMultiplicar"
-run/main_scene="res://scenes_and_scripts/Main.tscn"
+run/main_scene="res://scenes_and_scripts/main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-SceneManager="*res://scenes_and_scripts/globalSingletons/SceneManager.gd"
-GlobalValues="*res://scenes_and_scripts/globalSingletons/GlobalValues.gd"
-Firebase="*res://scenes_and_scripts/globalSingletons/Firebase.gd"
+GlobalValues="*res://scenes_and_scripts/gl_singl__global_constants/global_contants.gd"
+SceneManager="*res://scenes_and_scripts/gl_singl__scene_manager/scene_manager.gd"
+Firebase="*res://scenes_and_scripts/gl_singl__firebase/firebase.gd"
+UserConfig="*res://scenes_and_scripts/gl_singl__user_config/user_config.gd"
 
 [display]
 

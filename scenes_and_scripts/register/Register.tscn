@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes_and_scripts/register/Register.gd" type="Script" id=2]
+[ext_resource path="res://scenes_and_scripts/register/register.gd" type="Script" id=2]
+[ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/back_to_menu_button.tscn" type="PackedScene" id=3]
 
 [node name="Register" type="CanvasLayer"]
 script = ExtResource( 2 )
@@ -98,6 +99,12 @@ margin_bottom = 286.0
 text = "Go Back To Login"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Button" parent="." instance=ExtResource( 3 )]
+margin_left = 104.0
+margin_top = 578.0
+margin_right = 249.0
+margin_bottom = 608.0
 
 [connection signal="pressed" from="VBoxContainer/RegisterButton" to="." method="_on_RegisterButton_pressed"]
 [connection signal="pressed" from="VBoxContainer/GoToLoginButton" to="." method="_on_GoToLoginButton_pressed"]
