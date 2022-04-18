@@ -1,6 +1,6 @@
 extends Button
 
-signal respuestaSeleccionada(valor)
+signal answer_selected(valor)
 
 var miValor:int
 
@@ -10,10 +10,10 @@ func _ready():
 		print('error found')
 
 func enviarMiValor():
-	emit_signal("respuestaSeleccionada", miValor)
+	emit_signal("answer_selected", miValor)
 
 
-func iniciarEnNuevaPregunta(miValorIn: int):
+func set_new_question(miValorIn: int):
 	miValor = miValorIn
 
 	self.set_size(Vector2(49, 57))

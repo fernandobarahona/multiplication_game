@@ -6,7 +6,7 @@ func _ready():
 	for ii in UserConfig.POSIBLE_BACKGROUNDS.size():
 		self.add_item(UserConfig.POSIBLE_BACKGROUNDS[ii][0] + " Background",ii)
 	
-	#Select the current selected backgraound o the button 
+	#Select the current selected backgraound on the button 
 	self.select(UserConfig.POSIBLE_BACKGROUNDS.find(UserConfig.selected_background))
 	
 func _on_BakcgroundSelectButton_item_selected(index):

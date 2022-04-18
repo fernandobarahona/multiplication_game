@@ -1,21 +1,21 @@
 extends Node2D
 
-var arregloDeRespuestas:Array = crearTodasLasRespuestas()
+var answer_array:Array = create_posible_answers()
 
-var SCENES_AND_SCRIPTS_PATHS: Dictionary = {
-	"scene__main_menu": "res://scenes_and_scripts/menu__main/main_menu.tscn",
-	"scene__config_menu":"res://scenes_and_scripts/menu__config/config_menu.tscn",
-	"scene__game":"res://scenes_and_scripts/game/game.tscn",
-	"scene__login":"res://scenes_and_scripts/login/login.tscn",
-	"scene__register": "res://scenes_and_scripts/register/register.tscn",
+const SCENES_AND_SCRIPTS_PATHS: Dictionary = {
+	"scene__main_menu": "res://scenes_and_scripts/screen__main_menu/main_menu.tscn",
+	"scene__config_menu":"res://scenes_and_scripts/screen__config_menu/config_menu.tscn",
+	"scene__game":"res://scenes_and_scripts/screen__practice_game/game.tscn",
+	"scene__login":"res://scenes_and_scripts/screen__login/login.tscn",
+	"scene__register": "res://scenes_and_scripts/screen__register/register.tscn",
 	"scene__parallax_background": "res://scenes_and_scripts/background__math_parallax/math_parallax_background.tscn",
 	"scene__matrix_background": "res://scenes_and_scripts/background__matrix/matrix_background.tscn"
 }
 
-func crearTodasLasRespuestas():
-	var arregloDeRespuestasInner = []
+func create_posible_answers():
+	var answer_array_inner = []
 	for ii in range(11):
 		for jj in range(ii, 11):
-			if !arregloDeRespuestasInner.has(ii*jj):
-				arregloDeRespuestasInner.append(ii*jj)
-	return arregloDeRespuestasInner
+			if !answer_array_inner.has(ii*jj):
+				answer_array_inner.append(ii*jj)
+	return answer_array_inner

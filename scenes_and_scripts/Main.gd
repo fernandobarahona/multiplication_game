@@ -1,6 +1,6 @@
 extends Container
 
-var menu = preload("menu__main/main_menu.tscn")
+var _menu = preload("screen__main_menu/main_menu.tscn")
 
 func _ready():
-	SceneManager.gotoScene(menu)
+	SceneManager.goto_scene(_menu)

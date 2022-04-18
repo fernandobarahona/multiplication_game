@@ -1,11 +1,11 @@
 extends Button
 
-var menuScene = load(GlobalValues.SCENES_AND_SCRIPTS_PATHS["scene__main_menu"])
+var _menu_scene = load(GlobalConstants.SCENES_AND_SCRIPTS_PATHS["scene__main_menu"])
 
 func _ready():
-	var err = self.connect("pressed",self,"goToMenu")
+	var err = self.connect("pressed",self,"goto_menu")
 	if err != OK:
 		print("Failure!")
 
-func goToMenu():
-	SceneManager.gotoScene(menuScene)
+func goto_menu():
+	SceneManager.goto_scene(_menu_scene)

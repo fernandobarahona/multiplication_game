@@ -1,11 +1,26 @@
 extends Node2D
 
-func gotoScene(sceneToGo: PackedScene, mainScenePath:String = "/root/MainContainer"):
+var _previous_scene : PackedScene
+var _current_scene : PackedScene
+var _scene_history : Array
 
-	var mainContainer = get_node(mainScenePath)
-	var previousScene
-	if mainContainer.get_child_count() > 2:
-		previousScene = mainContainer.get_child(mainContainer.get_child_count()-1)
-		previousScene.call_deferred('free')
+func goto_scene(sceneToGo: PackedScene, mainContainer:Node = get_node("/root/Main/MainContainer")):
+	
+	#save the last current scene to a new previous scene
+	if _current_scene:
+		_previous_scene = _current_scene
+		_scene_history.push_back(_current_scene.get_state().get_node_name(0))
+	#Erase previous_scene_nodes from tree and memory
+	if mainContainer.get_child_count() != 0:
+		var previous_scene_node = mainContainer.get_child(0)
+		previous_scene_node.call_deferred('free')
+	#instanciate the new scene and add it to the tree
 	var sceneToGoInstance = sceneToGo.instance()
 	mainContainer.add_child(sceneToGoInstance)
+	#save the current scene 
+	_current_scene = sceneToGo
+	print(_scene_history)
+
+##	Create the function to go to previous scene
+func goto_previousScene():
+	pass

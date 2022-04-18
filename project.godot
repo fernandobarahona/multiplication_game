@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "MarginContainer",
+"class": "MainMenu",
+"language": "GDScript",
+"path": "res://scenes_and_scripts/screen__main_menu/main_menu.gd"
+} ]
+_global_script_class_icons={
+"MainMenu": ""
+}
+
 [application]
 
 config/name="TablasMultiplicar"
@@ -16,10 +26,11 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GlobalValues="*res://scenes_and_scripts/gl_singl__global_constants/global_contants.gd"
+GlobalConstants="*res://scenes_and_scripts/gl_singl__global_constants/global_contants.gd"
 SceneManager="*res://scenes_and_scripts/gl_singl__scene_manager/scene_manager.gd"
 Firebase="*res://scenes_and_scripts/gl_singl__firebase/firebase.gd"
 UserConfig="*res://scenes_and_scripts/gl_singl__user_config/user_config.gd"
+BackgroundManager="*res://scenes_and_scripts/gl_singl__scene_manager/scene_manager.gd"
 
 [display]
 
