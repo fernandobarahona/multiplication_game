@@ -25,4 +25,4 @@ func _on_HTTPRequest_request_completed(_result: int, response_code: int, _header
 
 
 func _on_GoToLoginButton_pressed():
-	SceneManager.goto_scene(_logInScene)
+	ScreenManager.goto_scene(_logInScene)

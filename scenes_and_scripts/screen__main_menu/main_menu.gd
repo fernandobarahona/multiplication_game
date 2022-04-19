@@ -12,7 +12,4 @@ func _ready():
 	var _err3 = get_node("VBoxContainer/GoToLoginBtn").connect("pressed",self,"goToScene",[_login_scene])
 
 func goToScene(scene):
-	SceneManager.goto_scene(scene)
-
-func func2():
-	pass
+	ScreenManager.goto_scene(scene)

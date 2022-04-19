@@ -4,8 +4,8 @@ onready var _question = $ExternalVBoxContainer/QuestionContainer/Question
 onready var _score_bar = $ExternalVBoxContainer/HUDContainer/ScoreBar
 onready var _score_bar_text = $ExternalVBoxContainer/HUDContainer/Container/ScoreBarText
 onready var _audio_effects_player = $ExternalVBoxContainer/GameSoundEffects
-onready var _audio_fx__correct = preload("res://assets/soundEffects/correct.mp3")
-onready var _audio_fx__wrong = preload("res://assets/soundEffects/error.mp3")
+onready var _audio_fx__correct = preload("res://scenes_and_scripts/screen__practice_game/soundEffects/correct.mp3")
+onready var _audio_fx__wrong = preload("res://scenes_and_scripts/screen__practice_game/soundEffects/error.mp3")
 
 onready var option_btn_array = [
 	$ExternalVBoxContainer/Options/HBox/VBox1/op1,

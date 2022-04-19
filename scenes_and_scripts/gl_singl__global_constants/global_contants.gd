@@ -11,6 +11,9 @@ const SCENES_AND_SCRIPTS_PATHS: Dictionary = {
 	"scene__parallax_background": "res://scenes_and_scripts/background__math_parallax/math_parallax_background.tscn",
 	"scene__matrix_background": "res://scenes_and_scripts/background__matrix/matrix_background.tscn"
 }
+const ASSETS_PATHS: Dictionary = {
+	"background_music": "res://global_assets/music/music_zapsplat_action_break.mp3"
+}
 
 func create_posible_answers():
 	var answer_array_inner = []

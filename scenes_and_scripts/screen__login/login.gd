@@ -23,4 +23,4 @@ func _on_HTTPRequest_request_completed(_result: int, response_code: int, _header
 
 
 func _on_GoToRegisterButton_pressed():
-	SceneManager.goto_scene(_register_scene)
+	ScreenManager.goto_scene(_register_scene)

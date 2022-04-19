@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.svg.2022_02_05_01_15_15.0.svg-8e0f243dd1172202f519cf200fa4abe1.stex"
+path="res://.import/math_parallax_background.jpg-2ae53ca36da3b94143f6773ebab5e09a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/icon.svg.2022_02_05_01_15_15.0.svg"
-dest_files=[ "res://.import/icon.svg.2022_02_05_01_15_15.0.svg-8e0f243dd1172202f519cf200fa4abe1.stex" ]
+source_file="res://scenes_and_scripts/background__math_parallax/math_parallax_background.jpg"
+dest_files=[ "res://.import/math_parallax_background.jpg-2ae53ca36da3b94143f6773ebab5e09a.stex" ]
 
 [params]
 
