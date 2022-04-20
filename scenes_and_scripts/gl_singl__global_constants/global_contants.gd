@@ -9,7 +9,8 @@ const SCENES_AND_SCRIPTS_PATHS: Dictionary = {
 	"scene__login":"res://scenes_and_scripts/screen__login/login.tscn",
 	"scene__register": "res://scenes_and_scripts/screen__register/register.tscn",
 	"scene__parallax_background": "res://scenes_and_scripts/background__math_parallax/math_parallax_background.tscn",
-	"scene__matrix_background": "res://scenes_and_scripts/background__matrix/matrix_background.tscn"
+	"scene__matrix_background": "res://scenes_and_scripts/background__matrix/matrix_background.tscn",
+	"scene__foggy_mountain": "res://scenes_and_scripts/background__foggy_mountain/foggy_background.tscn"
 }
 const ASSETS_PATHS: Dictionary = {
 	"background_music": "res://global_assets/music/music_zapsplat_action_break.mp3"

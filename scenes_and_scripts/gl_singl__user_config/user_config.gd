@@ -4,9 +4,11 @@ signal BackgroundChanged
 
 var MATRIX_BACKGROUND = ["Matrix", GlobalConstants.SCENES_AND_SCRIPTS_PATHS["scene__matrix_background"]]
 var PARALLAX_BACKGROUND = ["Parallax", GlobalConstants.SCENES_AND_SCRIPTS_PATHS["scene__parallax_background"]]
+var FOGGY_BACKGROUND = ["Foggy", GlobalConstants.SCENES_AND_SCRIPTS_PATHS["scene__foggy_mountain"]]
 var POSIBLE_BACKGROUNDS = [
 	MATRIX_BACKGROUND, 
-	PARALLAX_BACKGROUND
+	PARALLAX_BACKGROUND,
+	FOGGY_BACKGROUND
 	]
 
 onready var _user_config_file = File.new()
