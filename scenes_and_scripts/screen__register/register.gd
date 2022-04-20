@@ -3,10 +3,10 @@ extends MarginContainer
 var _logInScene = load(GlobalConstants.SCENES_AND_SCRIPTS_PATHS["scene__login"])
 
 onready var _http : HTTPRequest = $HTTPRequest
-onready var _username : LineEdit = $VBoxContainer/CenterContainer/VBoxContainer/UserNameHContainer/UserNameText
-onready var _password : LineEdit = $VBoxContainer/CenterContainer/VBoxContainer/PasswordHContainer/PasswordText
-onready var _confirm : LineEdit = $VBoxContainer/CenterContainer/VBoxContainer/ConfirmPasswordHContainer/ConfirmPasswordText
-onready var _notification : Label = $VBoxContainer/CenterContainer/VBoxContainer/NotificationLabel
+onready var _username : LineEdit = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/UserNameHContainer/UserNameText
+onready var _password : LineEdit = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/PasswordHContainer/PasswordText
+onready var _confirm : LineEdit = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ConfirmPasswordHContainer/ConfirmPasswordText
+onready var _notification : Label = $CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/NotificationLabel
 
 func _on_RegisterButton_pressed():
 	if _password.text != _confirm.text or _username.text.empty() or _password.text.empty():
