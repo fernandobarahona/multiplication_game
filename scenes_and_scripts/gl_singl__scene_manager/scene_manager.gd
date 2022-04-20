@@ -11,9 +11,10 @@ func goto_scene(sceneToGo: PackedScene, mainContainer:Node = get_node("/root/Mai
 	if _current_scene:
 		_previous_scene = _current_scene
 		_scene_history.push_back(_current_scene.get_state().get_node_name(0))
-	#Animate the precious_scene_node to fade out. Then erase previous_scene_nodes from tree and memory
+	#Erase previous_scene_nodes from tree and memory
 	if mainContainer.get_child_count() != 0:
 		var previous_scene_node = mainContainer.get_child(0)
+		#_fade_out(previous_scene_node)
 		yield(_fade_out(previous_scene_node), "completed")
 		previous_scene_node.call_deferred('free')
 	#instanciate the new scene and add it to the tree
@@ -28,6 +29,7 @@ func goto_previousScene():
 	pass
 
 func _fade_out(_container : Node):
+	prints("hola", _container)
 	
 	var transition_rect = ColorRect.new()
 	var transition_tween = Tween.new()

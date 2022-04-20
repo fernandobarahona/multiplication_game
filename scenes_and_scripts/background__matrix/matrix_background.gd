@@ -30,6 +30,10 @@ func calculate_font_positions():
 	for ii in letters_x_quantity:
 		x_positions.append(font_width * ii)
 		
+		if x_positions.size() >= 25:
+			var _err1 = x_positions.pop_back()
+			_err1.queue_free()
+		
 	#CALCULATE X(COLUMN) FONT POSITION
 	var font_height = 0
 	for ii in posibles_chars:
@@ -39,6 +43,10 @@ func calculate_font_positions():
 	var letters_y_quantity = ceil(screen_heigth / font_height)
 	for ii in letters_y_quantity:
 		y_positions.append(font_height * ii)
+		
+		if y_positions.size() >= 28:
+			var _err2 = y_positions.pop_back()
+			_err2.queue_free()
 
 func _physics_process(_delta):
 	if time_for_columns > 0:
@@ -51,4 +59,8 @@ func _physics_process(_delta):
 		position_index = randi()%x_positions.size()
 		
 		time_for_columns = TIME_IN_SEC * FRAME_PER_SECOND
+		
+		if $MatrixContainer.get_child_count() > 36:
+			new_matrix_column.queue_free()
+			new_matrix_column.call_deferred('free')
 	
