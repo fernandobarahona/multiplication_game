@@ -1,6 +1,7 @@
 extends MarginContainer
 
 onready var _question = $ExternalVBoxContainer/QuestionContainer/Question
+onready var _question_timer = $ExternalVBoxContainer/HUDContainer/QuestionTimer
 onready var _score_bar = $ExternalVBoxContainer/HUDContainer/ScoreBar
 onready var _score_bar_text = $ExternalVBoxContainer/HUDContainer/Container/ScoreBarText
 onready var _audio_effects_player = $ExternalVBoxContainer/GameSoundEffects
@@ -23,6 +24,7 @@ var correct_value
 var answers_array = GlobalConstants.create_posible_answers()
 
 func _ready():
+	var _err = _question_timer.connect("time_out", self, "evaluarYReiniciar", [null])
 	new_question()
 	for option_btn in option_btn_array:
 		option_btn.connect("answer_selected", self, "evaluarYReiniciar")
@@ -48,6 +50,7 @@ func evaluarYReiniciar(press_btn_value):
 	_score_bar_text.text = str(correct_tries) + " / " + str(tries)
 
 func new_question():
+	_question_timer.restart_timer()
 	randomize()
 	var questionNum1 = randi()%11
 	var questionNum2 = randi()%11

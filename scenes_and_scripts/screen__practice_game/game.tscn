@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/game.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/fonts/scoreBar_dynamicfont.tres" type="DynamicFont" id=2]
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/option.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/back_to_menu_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=5]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/circular_count_down/circular_count_down.tscn" type="PackedScene" id=6]
 
 [node name="Game" type="MarginContainer"]
 anchor_right = 1.0
@@ -28,17 +29,16 @@ __meta__ = {
 margin_top = 12.0
 margin_right = 360.0
 margin_bottom = 59.0
+size_flags_vertical = 0
 custom_constants/separation = 10
 alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="ExternalVBoxContainer/HUDContainer"]
-margin_right = 115.0
+[node name="QuestionTimer" parent="ExternalVBoxContainer/HUDContainer" instance=ExtResource( 6 )]
+margin_right = 47.0
 margin_bottom = 47.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="ScoreBar" type="ProgressBar" parent="ExternalVBoxContainer/HUDContainer"]
-margin_left = 125.0
+margin_left = 57.0
 margin_right = 240.0
 margin_bottom = 47.0
 size_flags_horizontal = 3
@@ -49,6 +49,7 @@ custom_fonts/font = ExtResource( 2 )
 margin_left = 250.0
 margin_right = 360.0
 margin_bottom = 47.0
+size_flags_vertical = 3
 
 [node name="ColorRect" type="ColorRect" parent="ExternalVBoxContainer/HUDContainer/Container"]
 margin_left = 7.0

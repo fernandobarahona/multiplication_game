@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Control",
+"class": "CircularProgressBar",
+"language": "GDScript",
+"path": "res://scenes_and_scripts/gl_obj__circular_progress_bar/circular_progress_bar.gd"
+} ]
+_global_script_class_icons={
+"CircularProgressBar": ""
+}
+
 [application]
 
 config/name="TablasMultiplicar"
