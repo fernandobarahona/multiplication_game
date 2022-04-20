@@ -31,7 +31,14 @@ margin_bottom = 59.0
 custom_constants/separation = 10
 alignment = 1
 
+[node name="ProgressBar" type="ProgressBar" parent="ExternalVBoxContainer/HUDContainer"]
+margin_right = 115.0
+margin_bottom = 47.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
 [node name="ScoreBar" type="ProgressBar" parent="ExternalVBoxContainer/HUDContainer"]
+margin_left = 125.0
 margin_right = 240.0
 margin_bottom = 47.0
 size_flags_horizontal = 3
