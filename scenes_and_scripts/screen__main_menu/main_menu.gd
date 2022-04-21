@@ -10,4 +10,4 @@ func _ready():
 	var _err3 = get_node("CenterContainer/VBoxContainer/GoToLoginBtn").connect("pressed",self,"goto_scene",[_login_scene])
 
 func goto_scene(scene):
-	ScreenManager.goto_scene(scene)
+	Transition.changeSceneLoc(scene)
