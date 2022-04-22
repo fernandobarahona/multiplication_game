@@ -1,33 +1,41 @@
 extends CanvasLayer
 
-onready var transitionRect : ColorRect = ColorRect.new()
-onready var transitionTween : Tween = $TransitionTween
+onready var transition_tween : Tween = Tween.new()
+onready var transition_rect : ColorRect = ColorRect.new()
+onready var full_screen : Vector2 = Vector2(360,640)
 
-func changeSceneLoc(scene : PackedScene) -> void:
-	layer = 1
+func change_scene_loc(scene : PackedScene) -> void:
+	self.layer = 1
 	
-	transitionRect.rect_size = Vector2(360,640)
-	add_child(transitionRect)
-	print(transitionRect.rect_size)
+	#add tween
+	add_child(transition_tween)
+	
+	#add colorRect
+	transition_rect.rect_size = full_screen
+	add_child(transition_rect)
 	
 	#fade in
-	var _fadeIn = transitionTween.interpolate_property(transitionRect, 
+	var _fadeIn = transition_tween.interpolate_property(transition_rect, 
 										"color", Color("00000000"),
 										Color("000000"),0.5)
-	var _fadeInStart = transitionTween.start()
-	yield(transitionTween, "tween_completed")
+	var _fadeInStart = transition_tween.start()
+	yield(transition_tween, "tween_completed")
 	
 	#change scene
 	ScreenManager.goto_scene(scene)
 	
 	#fade out
-	var _fadeOut = transitionTween.interpolate_property(transitionRect, 
+	var _fadeOut = transition_tween.interpolate_property(transition_rect, 
 										"color", Color("000000"),
 										Color("00000000"),0.5)
-	var _fadeOutEnd = transitionTween.start()
-	yield(transitionTween, "tween_completed")
-	layer = 0
-	remove_child(transitionRect)
+	var _fadeOutEnd = transition_tween.start()
+	yield(transition_tween, "tween_completed")
+	
+	# remove transition's children
+	remove_child(transition_rect)
+	remove_child(transition_tween)
 
+	self.layer = 0
+	
 func _ready():
-	layer = 0
+	self.layer = 0

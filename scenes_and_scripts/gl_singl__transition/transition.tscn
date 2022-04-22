@@ -5,5 +5,3 @@
 [node name="Transition" type="CanvasLayer"]
 layer = -2
 script = ExtResource( 1 )
-
-[node name="TransitionTween" type="Tween" parent="."]
