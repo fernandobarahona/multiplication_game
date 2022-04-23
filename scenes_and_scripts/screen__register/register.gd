@@ -25,4 +25,4 @@ func _on_HTTPRequest_request_completed(_result: int, response_code: int, _header
 
 
 func _on_GoToLoginButton_pressed():
-	Transition.change_scene_loc(_logInScene)
+	AnimatedSceneManager.change_scene_with_animation(_logInScene, "fade_in_out")

@@ -10,4 +10,4 @@ func _ready():
 	var _err3 = get_node("CenterContainer/VBoxContainer/GoToLoginBtn").connect("pressed",self,"goto_scene",[_login_scene])
 
 func goto_scene(scene):
-	Transition.change_scene_loc(scene)
+	AnimatedSceneManager.change_scene_with_animation(scene, "fade_in_out")

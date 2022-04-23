@@ -8,4 +8,4 @@ func _ready():
 		print("Failure!")
 
 func goto_menu():
-	Transition.change_scene_loc(_menu_scene)
+	AnimatedSceneManager.change_scene_with_animation(_menu_scene, "fade_in_out")
