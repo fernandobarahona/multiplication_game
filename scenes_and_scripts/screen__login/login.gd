@@ -23,4 +23,4 @@ func _on_HTTPRequest_request_completed(_result: int, response_code: int, _header
 
 
 func _on_GoToRegisterButton_pressed():
-	AnimatedSceneManager.change_scene_with_animation(_register_scene, "fade_in_out")
+	AnimatedSceneManager.change_scene_with_animation(_register_scene)

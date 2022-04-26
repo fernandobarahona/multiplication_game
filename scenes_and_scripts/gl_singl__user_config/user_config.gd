@@ -21,5 +21,5 @@ func _read_selected_background_from_file():
 		return_value = _user_config_file.get_var()
 		_user_config_file.close()
 	else:
-		return_value =GlobalConstants.PARALLAX_BACKGROUND
+		return_value = GlobalConstants.PARALLAX_BACKGROUND
 	return return_value

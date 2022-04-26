@@ -10,7 +10,7 @@ func _ready():
 		#create items based on posible backgrounds declared in Global Values
 		self.add_item(GlobalConstants.POSIBLE_BACKGROUNDS[ii]["name"] + " Background",ii)
 		#_posible_backgrounds_packed_scene_array.append(load(GlobalConstants.POSIBLE_BACKGROUNDS[ii]["path"]))
-		#Select the current selected backgraound on the button 
+		#Select the current selected background on the button 
 		if GlobalConstants.POSIBLE_BACKGROUNDS[ii].hash() == UserConfig.selected_background.hash():
 			self.select(ii)
 
