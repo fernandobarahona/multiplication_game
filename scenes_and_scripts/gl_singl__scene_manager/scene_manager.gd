@@ -21,7 +21,6 @@ func goto_scene(sceneToGo: PackedScene, mainContainer:Node = get_node("/root/Mai
 	
 	#save the current scene 
 	_current_scene = sceneToGo
-	print(_scene_history)
 
 ##	Create the function to go to previous scene
 func goto_previousScene():

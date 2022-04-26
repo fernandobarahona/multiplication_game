@@ -15,7 +15,17 @@ const SCENES_AND_SCRIPTS_PATHS: Dictionary = {
 const ASSETS_PATHS: Dictionary = {
 	"background_music": "res://global_assets/music/music_zapsplat_action_break.mp3"
 }
-
+#var MATRIX_BACKGROUND = ["Matrix", SCENES_AND_SCRIPTS_PATHS["scene__matrix_background"]]
+#var PARALLAX_BACKGROUND = ["Parallax", SCENES_AND_SCRIPTS_PATHS["scene__parallax_background"]]
+#var FOGGY_BACKGROUND = ["Foggy", SCENES_AND_SCRIPTS_PATHS["scene__foggy_mountain"]]
+var MATRIX_BACKGROUND = {"name":"Matrix","path": SCENES_AND_SCRIPTS_PATHS["scene__matrix_background"]}
+var PARALLAX_BACKGROUND = {"name":"Parallax", "path": SCENES_AND_SCRIPTS_PATHS["scene__parallax_background"]}
+var FOGGY_BACKGROUND = {"name":"Foggy", "path": SCENES_AND_SCRIPTS_PATHS["scene__foggy_mountain"]}
+var POSIBLE_BACKGROUNDS = [
+	MATRIX_BACKGROUND, 
+	PARALLAX_BACKGROUND,
+	FOGGY_BACKGROUND
+	]
 func create_posible_answers():
 	var answer_array_inner = []
 	for ii in range(11):

@@ -8,6 +8,9 @@
 margin_right = 360.0
 margin_bottom = 640.0
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="BackgroundContainer" type="CanvasLayer" parent="."]
 layer = -1
