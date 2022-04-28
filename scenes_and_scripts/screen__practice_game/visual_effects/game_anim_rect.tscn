@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://scenes_and_scripts/new scene.gd" type="Script" id=1]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/visual_effects/game_anim_rect.gd" type="Script" id=1]
 
 [node name="ColorRect" type="ColorRect"]
 margin_right = 361.0

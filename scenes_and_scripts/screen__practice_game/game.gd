@@ -5,6 +5,7 @@ onready var _question_timer = $ExternalVBoxContainer/HUDContainer/QuestionTimer
 onready var _score_bar = $ExternalVBoxContainer/HUDContainer/ScoreBar
 onready var _score_bar_text = $ExternalVBoxContainer/HUDContainer/Container/ScoreBarText
 onready var _audio_effects_player = $ExternalVBoxContainer/GameSoundEffects
+onready var _background_visual_effects = $GameAnimRect
 onready var _audio_fx__correct = preload("res://scenes_and_scripts/screen__practice_game/soundEffects/correct.mp3")
 onready var _audio_fx__wrong = preload("res://scenes_and_scripts/screen__practice_game/soundEffects/error.mp3")
 
@@ -44,6 +45,8 @@ func evaluarYReiniciar(press_btn_value):
 	else:
 		_audio_effects_player.stream = _audio_fx__wrong
 		_audio_effects_player.play()
+		_background_visual_effects.animateAnswer("wrong")
+	
 	tries = tries + 1
 	correct_porcentage = float(correct_tries) / float(tries) * 100
 	_score_bar.value = correct_porcentage 

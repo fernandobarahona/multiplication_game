@@ -46,6 +46,7 @@ func calculate_font_positions():
 		
 		if y_positions.size() >= 28:
 			var _err2 = y_positions.pop_back()
+			print(_err2)
 			_err2.queue_free()
 
 func _physics_process(_delta):
