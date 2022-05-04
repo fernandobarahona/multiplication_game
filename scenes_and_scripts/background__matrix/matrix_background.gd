@@ -6,7 +6,7 @@ var matrix_font = preload("res://assets/themes/fonts/default_dynamicfont_bluethe
 var matrix_color = Color(0,255,0,1)
 
 var chars_to_print = ["1","0"]
-var posibles_chars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "X", "=", ]
+var posibles_chars:Array = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "X", "=", ]
 
 var x_positions = []
 var y_positions = []
@@ -22,17 +22,13 @@ func _ready():
 func calculate_font_positions():
 	#CALCULATE X(COLUMN) FONT POSITION
 	var font_width = 0
-	for ii in posibles_chars:
-		if matrix_font.get_char_size(ord(str(ii)))[0] > font_width:
-			font_width = matrix_font.get_char_size(ord(str(ii)))[0]
+	for ii in posibles_chars.size():
+		if matrix_font.get_char_size(ord(posibles_chars[ii]))[0] > font_width:
+			font_width = matrix_font.get_char_size(ord(posibles_chars[ii]))[0]
 	var screen_width = get_viewport().size.x
 	var letters_x_quantity = ceil(screen_width / font_width)
 	for ii in letters_x_quantity:
 		x_positions.append(font_width * ii)
-		
-		if x_positions.size() >= 25:
-			var _err1 = x_positions.pop_back()
-			_err1.queue_free()
 		
 	#CALCULATE X(COLUMN) FONT POSITION
 	var font_height = 0
@@ -43,10 +39,6 @@ func calculate_font_positions():
 	var letters_y_quantity = ceil(screen_heigth / font_height)
 	for ii in letters_y_quantity:
 		y_positions.append(font_height * ii)
-		
-		if y_positions.size() >= 28:
-			var _err2 = y_positions.pop_back()
-			_err2.queue_free()
 
 func _physics_process(_delta):
 	if time_for_columns > 0:
@@ -59,6 +51,8 @@ func _physics_process(_delta):
 		position_index = randi()%x_positions.size()
 		
 		time_for_columns = TIME_IN_SEC * FRAME_PER_SECOND
+		
+		#TODO CAMBIAR ESTO PARA NO SOBRECARGAR DE LETRAS
 		
 		if $MatrixContainer.get_child_count() > 36:
 			new_matrix_column.queue_free()

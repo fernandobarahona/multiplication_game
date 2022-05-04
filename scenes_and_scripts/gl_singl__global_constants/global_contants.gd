@@ -21,6 +21,7 @@ const ASSETS_PATHS: Dictionary = {
 var MATRIX_BACKGROUND = {"name":"Matrix","path": SCENES_AND_SCRIPTS_PATHS["scene__matrix_background"]}
 var PARALLAX_BACKGROUND = {"name":"Parallax", "path": SCENES_AND_SCRIPTS_PATHS["scene__parallax_background"]}
 var FOGGY_BACKGROUND = {"name":"Foggy", "path": SCENES_AND_SCRIPTS_PATHS["scene__foggy_mountain"]}
+var DEFAULT_BACKGROUND = PARALLAX_BACKGROUND
 var POSIBLE_BACKGROUNDS = [
 	MATRIX_BACKGROUND, 
 	PARALLAX_BACKGROUND,
