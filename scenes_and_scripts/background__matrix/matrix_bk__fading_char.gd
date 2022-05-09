@@ -6,7 +6,8 @@ var posible_chars_to_print = ["x"]
 var y_position = 0
 var x_position = 0
 
-func init(posi_chars:Array, initial_y:int, x_pos:int):
+func init(posi_chars:Array, initial_y:int, x_pos:int, font):
+	char_font = font
 	posible_chars_to_print = posi_chars
 	y_position = initial_y 
 	x_position = x_pos 
@@ -17,11 +18,6 @@ func _ready():
 	
 # warning-ignore:return_value_discarded
 	$AutoDeleteTimer.connect("timeout",self,"auto_delete")
-
-func _physics_process(_delta):
-	pass
-	#y_position = y_position + delta*50
-	#self.set_position(Vector2(x_position, y_position))
 
 func auto_delete():
 	self.queue_free()

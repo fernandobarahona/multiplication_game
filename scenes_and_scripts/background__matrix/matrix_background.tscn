@@ -23,3 +23,7 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="MatrixContainer"]
 environment = ExtResource( 3 )
+
+[node name="TimeBetweenColumnsTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true

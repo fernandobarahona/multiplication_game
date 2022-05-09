@@ -1,60 +1,64 @@
 extends Control
 
-var fallingChar = preload("matrix_bk__fading_char.tscn")
-var matrix_column = preload("matrix_bk__column.tscn")
-var matrix_font = preload("res://assets/themes/fonts/default_dynamicfont_bluetheme.tres")
+var _matrix_column = preload("matrix_bk__column.tscn")
+var _matrix_font = preload("res://assets/themes/fonts/default_dynamicfont_bluetheme.tres")
 var matrix_color = Color(0,255,0,1)
 
-var chars_to_print = ["1","0"]
-var posibles_chars:Array = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "X", "=", ]
+var posibles_chars:Array = ["0", "1"] setget set_chars_to_display
 
-var x_positions = []
-var y_positions = []
+var _x_positions = []
+var _y_positions = []
 
-var TIME_IN_SEC = 0.5
-var FRAME_PER_SECOND = 60
-var time_for_columns = TIME_IN_SEC * FRAME_PER_SECOND 
-var position_index = 0
+var columns_not_in_screen = []
+
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	calculate_font_positions()
+	create_every_column_and_positionate_it()
+	columns_to_scene_with_random_time()
 
-func calculate_font_positions():
+#Calculates the POSITIONS OF THE CHARS based on FONT WIDTH and SCREEN WIDTH
+func calculate_font_positions() -> void:
 	#CALCULATE X(COLUMN) FONT POSITION
 	var font_width = 0
 	for ii in posibles_chars.size():
-		if matrix_font.get_char_size(ord(posibles_chars[ii]))[0] > font_width:
-			font_width = matrix_font.get_char_size(ord(posibles_chars[ii]))[0]
+		if _matrix_font.get_char_size(ord(posibles_chars[ii]))[0] > font_width:
+			font_width = _matrix_font.get_char_size(ord(posibles_chars[ii]))[0]
 	var screen_width = get_viewport().size.x
 	var letters_x_quantity = ceil(screen_width / font_width)
 	for ii in letters_x_quantity:
-		x_positions.append(font_width * ii)
+		_x_positions.append(font_width * ii)
 		
 	#CALCULATE X(COLUMN) FONT POSITION
 	var font_height = 0
 	for ii in posibles_chars:
-		if matrix_font.get_char_size(ord(str(ii)))[1] > font_height:
-			font_height = matrix_font.get_char_size(ord(str(ii)))[1]
+		if _matrix_font.get_char_size(ord(str(ii)))[1] > font_height:
+			font_height = _matrix_font.get_char_size(ord(str(ii)))[1]
 	var screen_heigth = get_viewport().size.y
 	var letters_y_quantity = ceil(screen_heigth / font_height)
 	for ii in letters_y_quantity:
-		y_positions.append(font_height * ii)
+		_y_positions.append(font_height * ii)
 
-func _physics_process(_delta):
-	if time_for_columns > 0:
-		time_for_columns -= 1
+func create_every_column_and_positionate_it() -> void:
+	var time_between_chars = $TimeBetweenColumnsTimer.wait_time
+	for x_position in _x_positions:
+		var new_matrix_column = _matrix_column.instance()
+		new_matrix_column.init(_y_positions, x_position, _matrix_font, posibles_chars,time_between_chars)
+		columns_not_in_screen.append(new_matrix_column)
+
+func columns_to_scene_with_random_time() -> void:
+	var _err = $TimeBetweenColumnsTimer.connect("timeout",self,"put_column_to_scene_tree")
+
+func put_column_to_scene_tree() -> void:
+	if columns_not_in_screen.size() > 0:
+		var column_to_add_to_screen_index = rng.randi_range(0, columns_not_in_screen.size() - 1)
+		var column_to_add_to_screen = columns_not_in_screen[column_to_add_to_screen_index]
+		$MatrixContainer.add_child(column_to_add_to_screen)
+
+		columns_not_in_screen.remove(column_to_add_to_screen_index)
 	else:
-		var new_matrix_column = matrix_column.instance()
-		new_matrix_column.init(y_positions, x_positions[position_index])
-		$MatrixContainer.add_child(new_matrix_column)
-		
-		position_index = randi()%x_positions.size()
-		
-		time_for_columns = TIME_IN_SEC * FRAME_PER_SECOND
-		
-		#TODO CAMBIAR ESTO PARA NO SOBRECARGAR DE LETRAS
-		
-		if $MatrixContainer.get_child_count() > 36:
-			new_matrix_column.queue_free()
-			new_matrix_column.call_deferred('free')
-	
+		$TimeBetweenColumnsTimer.stop()
+
+func set_chars_to_display(pos_chars:Array) -> void:
+	posibles_chars = pos_chars
