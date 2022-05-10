@@ -20,53 +20,61 @@ var tries = 0
 var correct_tries = 0
 var correct_porcentage = 0
 
-var correct_value
+var correct_option_value
 
 var answers_array = GlobalConstants.create_posible_answers()
 
 func _ready():
-	var _err = _question_timer.connect("time_out", self, "evaluarYReiniciar", [null])
+	var _err = _question_timer.connect("time_out", self, "evaluate_and_reset", [null])
 	new_question()
 	for option_btn in option_btn_array:
-		option_btn.connect("answer_selected", self, "evaluarYReiniciar")
+		option_btn.connect("answer_selected", self, "evaluate_and_reset")
 
-func evaluarYReiniciar(press_btn_value):
-	var is_correct
-	if press_btn_value == correct_value:
-		is_correct = true
-	else:
-		is_correct = false
-	new_question()
-	if is_correct == true:
+func evaluate_and_reset(press_btn_value):
+
+	var is_correct = true if (press_btn_value == correct_option_value) else false
+
+	if is_correct:
 		_audio_effects_player.stream = _audio_fx__correct
-		
-		_audio_effects_player.play()
 		correct_tries = correct_tries + 1
 	else:
 		_audio_effects_player.stream = _audio_fx__wrong
-		_audio_effects_player.play()
 		_background_visual_effects.animateAnswer("wrong")
+		
+	_audio_effects_player.play()
 	
 	tries = tries + 1
 	correct_porcentage = float(correct_tries) / float(tries) * 100
 	_score_bar.value = correct_porcentage 
 	_score_bar_text.text = str(correct_tries) + " / " + str(tries)
 
-func new_question():
+	new_question()
 	_question_timer.restart_timer()
+
+func new_question():
 	randomize()
 	var questionNum1 = randi()%11
 	var questionNum2 = randi()%11
-	var opcionCorrecta = randi()%4
-	var opciones = [0,0,0,0]
-	opciones[opcionCorrecta] = questionNum1 * questionNum2
-	for ii in 4:
-		if ii != opcionCorrecta:
-			var nuevaOpcion = randi()%answers_array.size()
-			while opciones.has(nuevaOpcion):
-				nuevaOpcion = randi()%answers_array.size()
-			opciones[ii] = answers_array[nuevaOpcion]
-	for ii in 4:
-		option_btn_array[ii].set_new_question(opciones[ii])
-	correct_value = questionNum1 * questionNum2
+	correct_option_value = questionNum1 * questionNum2
+
+	var correct_option_index = randi()%4
+	var options = [0,0,0,0]
+	
+	options[correct_option_index] = correct_option_value
+
+	for option_index in options.size():
+		var is_the_correct_option = true if (option_index == correct_option_index) else false 
+		
+		var new_option_index_in_answer_array = randi()%answers_array.size()
+		var new_option_value = answers_array[new_option_index_in_answer_array]
+
+		while options.has(new_option_value):
+			new_option_value = randi()%answers_array.size()
+		
+		if !is_the_correct_option:
+			options[option_index] = new_option_value
+
+	for ii in options.size():
+		option_btn_array[ii].set_new_question(options[ii])
+	
 	_question.text = "Cuanto es \n"+str(questionNum1)+"X "+str(questionNum2)
