@@ -2,7 +2,7 @@ extends MarginContainer
 
 onready var _question = $ExternalVBoxContainer/QuestionContainer/Question
 onready var _question_timer = $ExternalVBoxContainer/HUDContainer/QuestionTimer
-onready var _score_bar = $ExternalVBoxContainer/HUDContainer/ScoreBar
+onready var _score_bar = $ExternalVBoxContainer/HUDContainer/VBoxContainer/ScoreBar
 onready var _score_bar_text = $ExternalVBoxContainer/HUDContainer/Container/ScoreBarText
 onready var _audio_effects_player = $ExternalVBoxContainer/GameSoundEffects
 onready var _background_visual_effects = $GameAnimRect
@@ -37,9 +37,11 @@ func evaluate_and_reset(press_btn_value):
 	if is_correct:
 		_audio_effects_player.stream = _audio_fx__correct
 		correct_tries = correct_tries + 1
+		AnswerSignals.emit_signal("last_tries", 1)
 	else:
 		_audio_effects_player.stream = _audio_fx__wrong
 		_background_visual_effects.animateAnswer("wrong")
+		AnswerSignals.emit_signal("last_tries", 0)
 		
 	_audio_effects_player.play()
 	

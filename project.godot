@@ -33,6 +33,7 @@ UserConfig="*res://scenes_and_scripts/gl_singl__user_config/user_config.gd"
 BackgroundManager="*res://scenes_and_scripts/gl_singl__scene_manager/scene_manager.gd"
 AnimatedSceneManager="*res://scenes_and_scripts/gl_singl__animated_scene_manager/animated_scene_manager.gd"
 ObjectAnimationRepository="*res://scenes_and_scripts/gl_singl__object_animations_repository/object_animation_repository.gd"
+AnswerSignals="*res://scenes_and_scripts/gl_singl__answer_signals/answer_signals.gd"
 
 [display]
 
