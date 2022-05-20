@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "CircularProgressBar",
 "language": "GDScript",
 "path": "res://scenes_and_scripts/gl_obj__circular_progress_bar/circular_progress_bar.gd"
+}, {
+"base": "Node",
+"class": "QuestionGenerator",
+"language": "GDScript",
+"path": "res://scenes_and_scripts/screen__practice_game/QuestionGenerator.gd"
 } ]
 _global_script_class_icons={
-"CircularProgressBar": ""
+"CircularProgressBar": "",
+"QuestionGenerator": ""
 }
 
 [application]
@@ -33,7 +39,7 @@ UserConfig="*res://scenes_and_scripts/gl_singl__user_config/user_config.gd"
 BackgroundManager="*res://scenes_and_scripts/gl_singl__scene_manager/scene_manager.gd"
 AnimatedSceneManager="*res://scenes_and_scripts/gl_singl__animated_scene_manager/animated_scene_manager.gd"
 ObjectAnimationRepository="*res://scenes_and_scripts/gl_singl__object_animations_repository/object_animation_repository.gd"
-AnswerSignals="*res://scenes_and_scripts/gl_singl__answer_signals/answer_signals.gd"
+Signals="*res://scenes_and_scripts/gl_singl__signals/signals.gd"
 
 [display]
 

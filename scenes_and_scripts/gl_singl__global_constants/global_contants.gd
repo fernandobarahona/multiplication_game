@@ -1,7 +1,5 @@
 extends Node2D
 
-var answer_array:Array = create_posible_answers()
-
 const SCENES_AND_SCRIPTS_PATHS: Dictionary = {
 	"scene__main_menu": "res://scenes_and_scripts/screen__main_menu/main_menu.tscn",
 	"scene__config_menu":"res://scenes_and_scripts/screen__config_menu/config_menu.tscn",
@@ -27,10 +25,4 @@ var POSIBLE_BACKGROUNDS = [
 	PARALLAX_BACKGROUND,
 	FOGGY_BACKGROUND
 	]
-func create_posible_answers():
-	var answer_array_inner = []
-	for ii in range(11):
-		for jj in range(ii, 11):
-			if !answer_array_inner.has(ii*jj):
-				answer_array_inner.append(ii*jj)
-	return answer_array_inner
+

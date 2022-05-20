@@ -20,8 +20,6 @@ func _read_selected_background_from_file():
 		_user_config_file.open(_user_config_file_path, File.READ)
 		return_value = _user_config_file.get_var()
 		_user_config_file.close()
-		printt('si hay archivo return', return_value)
 	else:
-		print('no hay archivo')
 		return_value = GlobalConstants.DEFAULT_BACKGROUND
 	return return_value

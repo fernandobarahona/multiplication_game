@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/game.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/fonts/scoreBar_dynamicfont.tres" type="DynamicFont" id=2]
@@ -7,7 +7,10 @@
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=5]
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/circular_count_down/circular_count_down.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/visual_effects/game_anim_rect.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/last_20_tries/last_20_tries_container.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/lastest_tries_bar/lastest_tries_container.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/overall_tries_bar/ScoreBar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/GameSoundEffects.gd" type="Script" id=10]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/QuestionGenerator.gd" type="Script" id=11]
 
 [node name="Game" type="MarginContainer"]
 anchor_right = 1.0
@@ -45,16 +48,12 @@ margin_left = 58.0
 margin_right = 238.0
 margin_bottom = 72.0
 
-[node name="ScoreBar" type="ProgressBar" parent="ExternalVBoxContainer/HUDContainer/VBoxContainer"]
-margin_right = 180.0
-margin_bottom = 33.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-custom_fonts/font = ExtResource( 2 )
+[node name="ScoreBar" parent="ExternalVBoxContainer/HUDContainer/VBoxContainer" instance=ExtResource( 9 )]
 
 [node name="Last20TriesContainer" parent="ExternalVBoxContainer/HUDContainer/VBoxContainer" instance=ExtResource( 8 )]
 margin_top = 37.0
 margin_bottom = 72.0
+size = 5
 
 [node name="Container" type="PanelContainer" parent="ExternalVBoxContainer/HUDContainer"]
 margin_left = 248.0
@@ -101,7 +100,7 @@ text = "Cuanto es:
 align = 1
 valign = 1
 
-[node name="Options" type="MarginContainer" parent="ExternalVBoxContainer"]
+[node name="OptionsContainer" type="MarginContainer" parent="ExternalVBoxContainer"]
 margin_left = 50.0
 margin_top = 281.0
 margin_right = 310.0
@@ -109,31 +108,35 @@ margin_bottom = 541.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="HBox" type="HBoxContainer" parent="ExternalVBoxContainer/Options"]
+[node name="HBox" type="HBoxContainer" parent="ExternalVBoxContainer/OptionsContainer"]
 margin_right = 260.0
 margin_bottom = 260.0
 custom_constants/separation = 20
 
-[node name="VBox1" type="VBoxContainer" parent="ExternalVBoxContainer/Options/HBox"]
+[node name="VBox1" type="VBoxContainer" parent="ExternalVBoxContainer/OptionsContainer/HBox"]
 margin_right = 120.0
 margin_bottom = 260.0
 custom_constants/separation = 20
 
-[node name="op1" parent="ExternalVBoxContainer/Options/HBox/VBox1" instance=ExtResource( 3 )]
+[node name="Option1" parent="ExternalVBoxContainer/OptionsContainer/HBox/VBox1" instance=ExtResource( 3 )]
+unique_name_in_owner = true
 
-[node name="op2" parent="ExternalVBoxContainer/Options/HBox/VBox1" instance=ExtResource( 3 )]
+[node name="Option2" parent="ExternalVBoxContainer/OptionsContainer/HBox/VBox1" instance=ExtResource( 3 )]
+unique_name_in_owner = true
 margin_top = 140.0
 margin_bottom = 260.0
 
-[node name="VBox2" type="VBoxContainer" parent="ExternalVBoxContainer/Options/HBox"]
+[node name="VBox2" type="VBoxContainer" parent="ExternalVBoxContainer/OptionsContainer/HBox"]
 margin_left = 140.0
 margin_right = 260.0
 margin_bottom = 260.0
 custom_constants/separation = 20
 
-[node name="op3" parent="ExternalVBoxContainer/Options/HBox/VBox2" instance=ExtResource( 3 )]
+[node name="Option3" parent="ExternalVBoxContainer/OptionsContainer/HBox/VBox2" instance=ExtResource( 3 )]
+unique_name_in_owner = true
 
-[node name="op4" parent="ExternalVBoxContainer/Options/HBox/VBox2" instance=ExtResource( 3 )]
+[node name="Option4" parent="ExternalVBoxContainer/OptionsContainer/HBox/VBox2" instance=ExtResource( 3 )]
+unique_name_in_owner = true
 margin_top = 140.0
 margin_bottom = 260.0
 
@@ -144,3 +147,7 @@ margin_bottom = 641.0
 
 [node name="GameSoundEffects" type="AudioStreamPlayer" parent="ExternalVBoxContainer"]
 pause_mode = 1
+script = ExtResource( 10 )
+
+[node name="QuestionGenerator" type="Node" parent="."]
+script = ExtResource( 11 )

@@ -8,7 +8,6 @@ func _ready():
 	var last_open_background_path: String
 	var user_conf_bk_path_validated : bool = false
 	for ii in GlobalConstants.POSIBLE_BACKGROUNDS:
-		print(UserConfig.selected_background)
 		if (ii.path == UserConfig.selected_background["path"]):
 			user_conf_bk_path_validated = true
 	if (user_conf_bk_path_validated == false):
