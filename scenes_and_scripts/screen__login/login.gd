@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Control
 
 var _register_scene = load(GlobalConstants.SCENES_AND_SCRIPTS_PATHS["scene__register"])
 

@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 var _menu_scene = load(GlobalConstants.SCENES_AND_SCRIPTS_PATHS["scene__main_menu"])
 

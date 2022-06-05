@@ -58,8 +58,8 @@ shader_param/OCTAVES = 4
 [node name="FoggyBackground" type="Node2D"]
 
 [node name="FoggyPhoto" type="Sprite" parent="."]
-position = Vector2( 180.804, 320.536 )
-scale = Vector2( 0.45, 1.2 )
+position = Vector2( 540.402, 960.368 )
+scale = Vector2( 1.34899, 3.60087 )
 texture = ExtResource( 2 )
 
 [node name="FoggyShadder" type="Sprite" parent="FoggyPhoto"]

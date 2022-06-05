@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 signal answer_selected(valor)
 
@@ -16,4 +16,4 @@ func enviarMiValor():
 
 func set_new_question(miValorIn: int):
 	miValor = miValorIn
-	self.text = str(miValor)
+	$Label.text = str(miValor)

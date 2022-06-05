@@ -3,7 +3,7 @@ extends CanvasLayer
 onready var transition_rect : ColorRect = ColorRect.new()
 
 func _ready() -> void:
-	var full_screen : Vector2 = Vector2(360,640)
+	var full_screen : Vector2 = Vector2(1080,1920)
 	var transparentColor = Color("00000000")
 	
 	transition_rect.rect_size = full_screen
