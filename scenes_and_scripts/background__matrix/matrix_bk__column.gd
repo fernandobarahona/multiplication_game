@@ -3,37 +3,39 @@ extends Control
 var fadingChar = preload("matrix_bk__fading_char.tscn")
 
 var x_position := 0
-var y_positions := [20,80,140,200,260,320,380]
+var y_positions := []
+var chars := []
+var chars_not_in_screen := []
 var posibles_chars:Array
-var time_between_chars: float
 var chars_font: Resource
-const FRAME_PER_SECOND = 60
-var frames_between_chars: int = time_between_chars * FRAME_PER_SECOND
-var position_index = 0
+var column_width:= 0
 
-func init(y_pos_array:Array, x_pos:int, chars_fnt:Resource, pos_chars:Array, time_betw_chars:= 1.0):
+func init(y_pos_array:Array, x_pos:int, col_width: int, chars_fnt:Resource, pos_chars:Array, timer:Timer):
 	chars_font = chars_fnt
-	time_between_chars = time_betw_chars
-	frames_between_chars = int(time_between_chars * FRAME_PER_SECOND)
+	column_width = col_width
+	var _err = timer.connect("timeout",self,"_put_char_to_scene_tree")
 	posibles_chars = pos_chars
 	x_position = x_pos
 	y_positions = y_pos_array
 	
 func _ready():
-	pass
+	self.rect_size.x = column_width
+	self.rect_position.x = x_position
+	for y_position in y_positions:
+		var new_char = fadingChar.instance()
+		var character_to_print = posibles_chars[randi()%posibles_chars.size()] 
+		new_char.init(character_to_print, y_position, chars_font)
+		chars.append(new_char)
+		chars_not_in_screen.append(new_char)
+		
 	
-func _physics_process(_delta):
-	if frames_between_chars > 0:
-		frames_between_chars -= 1
-	else:
-		var new_label = fadingChar.instance()
-		new_label.init(posibles_chars, y_positions[position_index], x_position, chars_font)
-		add_child(new_label)
-		
-		
-		if position_index < y_positions.size() - 1:
-			position_index += 1
-		else:
-			position_index = 0
-		frames_between_chars = int(time_between_chars * FRAME_PER_SECOND)
+func _put_char_to_scene_tree():
+	if chars_not_in_screen.size() > 0 :
+		$".".add_child(chars_not_in_screen[0])
+		chars_not_in_screen.remove(0)
+
+func _tilt_chars_to_char(char_to_tilt):
+	for ch in chars:
+		if randi() % 2 == 1:
+			ch.tilt_to_character(char_to_tilt)
 	

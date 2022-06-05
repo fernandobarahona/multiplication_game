@@ -1,23 +1,26 @@
 extends Control
 
 var char_font 
-var char_color = Color(0,0,255,1)
-var posible_chars_to_print = ["x"]
+var char_to_print:= '0'
 var y_position = 0
-var x_position = 0
 
-func init(posi_chars:Array, initial_y:int, x_pos:int, font):
+func init(character_to_print : String, y_pos:int, font):
 	char_font = font
-	posible_chars_to_print = posi_chars
-	y_position = initial_y 
-	x_position = x_pos 
+	char_to_print = character_to_print
+	y_position = y_pos 
 
 func _ready():
-	self.set_position(Vector2(x_position,y_position))
-	$Label.text = posible_chars_to_print[randi()%posible_chars_to_print.size()]
-	
-# warning-ignore:return_value_discarded
-	$AutoDeleteTimer.connect("timeout",self,"auto_delete")
+	self.set_position(Vector2(0,y_position))
+	self.add_font_override("font",char_font)
+	self.text = char_to_print
 
-func auto_delete():
-	self.queue_free()
+func tilt_to_character(character:String) -> void:
+	self.text = character
+	$tiltingTimer.connect('timeout',self,"tilting_effect")
+	$tiltingTimer.start()
+	
+func tilting_effect():
+	self.text = char_to_print
+	$tiltingTimer.stop()
+	$tiltingTimer.disconnect('timeout',self,"tilting_effect")
+	

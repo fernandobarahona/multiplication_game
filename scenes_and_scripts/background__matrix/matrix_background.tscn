@@ -7,9 +7,6 @@
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="MatrixContainer" type="CanvasLayer" parent="."]
 
@@ -17,13 +14,10 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="MatrixContainer"]
 environment = ExtResource( 3 )
 
 [node name="TimeBetweenColumnsTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.3
 autostart = true
