@@ -5,8 +5,8 @@
 [ext_resource path="res://assets/music/music_zapsplat_action_break.mp3" type="AudioStream" id=3]
 
 [node name="Main" type="Container"]
-margin_right = 360.0
-margin_bottom = 640.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 2 )
 
 [node name="BackgroundContainer" type="CanvasLayer" parent="."]

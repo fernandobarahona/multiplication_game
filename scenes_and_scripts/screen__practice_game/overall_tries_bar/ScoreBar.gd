@@ -1,4 +1,4 @@
-extends ProgressBar
+extends Label
 
 var _correct_tries:=0
 var _total_tries:=0
@@ -13,4 +13,4 @@ func last_tries_calc(last_try) -> void:
 	if last_try:
 		_correct_tries += 1
 	
-	self.value = float(_correct_tries) / float(_total_tries) * 100
+	self.text = "QI: " + String(round(float(_correct_tries) / float(_total_tries) * 100)) + "%"

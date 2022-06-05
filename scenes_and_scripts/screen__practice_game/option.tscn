@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/option.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=2]
-[ext_resource path="res://assets/themes/fonts/game_option_btn_dynamicfont.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/themes/newthemed.tres" type="Theme" id=3]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/pressed_option_btn.png" type="Texture" id=4]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/hover_option_btn.png" type="Texture" id=5]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/normal_option_btn.png" type="Texture" id=6]
 
-[node name="opButton" type="Button"]
+[node name="opButton" type="TextureButton"]
 margin_right = 120.0
 margin_bottom = 120.0
 rect_min_size = Vector2( 120, 120 )
@@ -12,9 +15,18 @@ focus_mode = 0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 theme = ExtResource( 2 )
-custom_fonts/font = ExtResource( 3 )
-text = "54"
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 112.0
+margin_top = 120.0
+margin_right = 234.0
+margin_bottom = 218.0
+theme = ExtResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "54"
+align = 1
+valign = 1

@@ -7,43 +7,39 @@
 [node name="ConfigMenu" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Control" type="Control" parent="."]
-margin_right = 360.0
-margin_bottom = 640.0
+margin_right = 1080.0
+margin_bottom = 1920.0
 theme = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackgroundSelectLabel" type="Label" parent="Control"]
-margin_left = 49.0
-margin_top = 38.0
-margin_right = 105.0
-margin_bottom = 62.0
+margin_left = 94.0
+margin_top = 56.0
+margin_right = 319.0
+margin_bottom = 131.0
 text = "Fondo"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+align = 1
+valign = 1
 
 [node name="BakcgroundSelectButton" type="OptionButton" parent="Control"]
-margin_left = 121.0
-margin_top = 37.0
-margin_right = 150.0
-margin_bottom = 67.0
+margin_left = 415.0
+margin_top = 46.0
+margin_right = 1039.0
+margin_bottom = 136.0
 text = "Matrix Background"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" parent="Control" instance=ExtResource( 2 )]
-margin_left = 1.0
-margin_top = 536.0
-margin_right = 359.0
-margin_bottom = 566.0
+[node name="GoToMainMenuBtn" parent="Control" instance=ExtResource( 2 )]
+margin_left = 351.0
+margin_top = 946.0
+margin_right = 711.0
+margin_bottom = 1081.0
 
 [connection signal="item_selected" from="Control/BakcgroundSelectButton" to="Control/BakcgroundSelectButton" method="_on_BakcgroundSelectButton_item_selected"]

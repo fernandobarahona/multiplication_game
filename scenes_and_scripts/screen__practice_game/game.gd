@@ -1,4 +1,4 @@
-extends MarginContainer
+extends Control
 
 onready var _question = $ExternalVBoxContainer/QuestionContainer/Question
 onready var _question_timer = $ExternalVBoxContainer/HUDContainer/QuestionTimer
@@ -44,4 +44,4 @@ func new_question():
 	for ii in options.size():
 		option_btn_array[ii].set_new_question(options[ii])
 	
-	_question.text = "Cuanto es \n"+str(questionNum1)+"X "+str(questionNum2)
+	_question.text = str(questionNum1)+"X "+str(questionNum2)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/lastest_tries_bar/try_texture.gd" type="Script" id=1]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/correctmdpi.png" type="Texture" id=2]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/newmdpi.png" type="Texture" id=3]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/wrongmdpi.png" type="Texture" id=4]
+
+[node name="TryRect" type="TextureRect"]
+margin_bottom = 64.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+script = ExtResource( 1 )
+new_try = ExtResource( 3 )
+wrong_try = ExtResource( 4 )
+correct_try = ExtResource( 2 )
