@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/game.gd" type="Script" id=1]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/animmdpi.png" type="Texture" id=2]
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/option.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/back_to_menu_button.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=5]
@@ -59,11 +60,15 @@ margin_right = 143.0
 margin_bottom = -487.0
 
 [node name="Last20TriesContainer" parent="ExternalVBoxContainer/HUDContainer" instance=ExtResource( 8 )]
-margin_left = 360.0
-margin_top = -543.0
-margin_right = 540.0
-margin_bottom = -508.0
-size = 8
+margin_left = 344.0
+margin_top = -525.0
+margin_right = 524.0
+margin_bottom = -490.0
+size = 12
+
+[node name="Sprite" type="Sprite" parent="ExternalVBoxContainer/HUDContainer"]
+position = Vector2( 640, -431 )
+texture = ExtResource( 2 )
 
 [node name="ScoreBar" parent="ExternalVBoxContainer/HUDContainer" instance=ExtResource( 9 )]
 margin_left = 782.0
@@ -72,10 +77,10 @@ margin_right = 999.0
 margin_bottom = -339.0
 
 [node name="QuestionContainer" type="Control" parent="ExternalVBoxContainer"]
-margin_left = 8.0
-margin_top = 584.0
-margin_right = 1088.0
-margin_bottom = 653.0
+margin_left = 32.0
+margin_top = 544.0
+margin_right = 1112.0
+margin_bottom = 613.0
 
 [node name="ColorRect" type="TextureRect" parent="ExternalVBoxContainer/QuestionContainer"]
 margin_left = 72.0
@@ -85,10 +90,10 @@ margin_bottom = 121.0
 texture = ExtResource( 16 )
 
 [node name="QuestionText" type="Label" parent="ExternalVBoxContainer/QuestionContainer"]
-margin_left = 216.0
-margin_top = -13.0
-margin_right = 640.0
-margin_bottom = 65.0
+margin_left = 176.0
+margin_top = -16.0
+margin_right = 619.0
+margin_bottom = 64.0
 custom_colors/font_color = Color( 0, 0.74902, 0, 1 )
 custom_fonts/font = ExtResource( 15 )
 text = "Cuanto es?"

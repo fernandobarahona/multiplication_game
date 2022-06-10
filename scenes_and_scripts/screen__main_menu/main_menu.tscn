@@ -1,32 +1,71 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes_and_scripts/screen__main_menu/main_menu.gd" type="Script" id=1]
 [ext_resource path="res://scenes_and_scripts/screen__main_menu/main_menu_button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/themes/fonts/default_dynamicfont_bluetheme.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes_and_scripts/screen__main_menu/home_assets_m_skin/farme_homemdpi.png" type="Texture" id=4]
+[ext_resource path="res://scenes_and_scripts/screen__main_menu/home_assets_m_skin/03_profilemdpi.png" type="Texture" id=5]
+[ext_resource path="res://scenes_and_scripts/screen__main_menu/home_assets_m_skin/02_settingsmdpi_HOVER.png" type="Texture" id=6]
+[ext_resource path="res://scenes_and_scripts/screen__main_menu/home_assets_m_skin/02_settingsmdpi.png" type="Texture" id=7]
+[ext_resource path="res://scenes_and_scripts/screen__main_menu/home_assets_m_skin/03_profilemdpi_HOVER.png" type="Texture" id=8]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
 
+[node name="BackgroundSprite" type="Sprite" parent="."]
+position = Vector2( 41, 39 )
+texture = ExtResource( 4 )
+centered = false
+
 [node name="MenuContainer" type="Control" parent="."]
-margin_left = 216.0
-margin_top = 848.0
-margin_right = 867.0
-margin_bottom = 1427.0
+margin_left = 80.0
+margin_top = 664.0
+margin_right = 731.0
+margin_bottom = 1096.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="GoToGameBtn" parent="MenuContainer" instance=ExtResource( 2 )]
-custom_fonts/font = ExtResource( 3 )
-text = "A MULTIPLICAR"
+
+[node name="Label" parent="MenuContainer/GoToGameBtn" index="0"]
+margin_left = 169.0
+margin_top = 77.0
+margin_right = 854.0
+margin_bottom = 175.0
+custom_colors/font_color = Color( 0.254902, 0.760784, 0.12549, 1 )
+text = "A MULTIPLICAR!"
 
 [node name="GoToSettingsBtn" parent="MenuContainer" instance=ExtResource( 2 )]
-margin_top = 152.0
-margin_bottom = 245.0
-text = "CONFIGURACIONES"
+margin_top = 200.0
+margin_bottom = 383.0
+texture_normal = ExtResource( 7 )
+texture_pressed = ExtResource( 6 )
+
+[node name="Label" parent="MenuContainer/GoToSettingsBtn" index="0"]
+margin_left = 192.0
+margin_top = 74.0
+margin_right = 877.0
+margin_bottom = 172.0
+custom_colors/font_color = Color( 0.254902, 0.760784, 0.12549, 1 )
+text = "CONFIGURACION"
 
 [node name="GoToLoginBtn" parent="MenuContainer" instance=ExtResource( 2 )]
-margin_top = 328.0
-margin_bottom = 421.0
+margin_left = 208.0
+margin_top = 464.0
+margin_right = 704.0
+margin_bottom = 604.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 8 )
+
+[node name="Label" parent="MenuContainer/GoToLoginBtn" index="0"]
+margin_left = 170.0
+margin_top = 35.0
+margin_right = 855.0
+margin_bottom = 133.0
+custom_colors/font_color = Color( 0.254902, 0.760784, 0.12549, 1 )
 text = "LOGIN"
+
+[editable path="MenuContainer/GoToGameBtn"]
+[editable path="MenuContainer/GoToSettingsBtn"]
+[editable path="MenuContainer/GoToLoginBtn"]

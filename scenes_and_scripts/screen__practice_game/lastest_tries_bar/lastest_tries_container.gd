@@ -14,7 +14,7 @@ func _ready():
 	for ii in size:
 		new_try_texture = try_texture.instance()
 		new_try_texture.texture = new_try_texture.new_try
-		new_try_texture.rect_min_size = Vector2(70,70)
+		new_try_texture.rect_min_size = Vector2(70,60)
 		_last_tries_nodes_array.push_front(new_try_texture)
 		$HBoxContainer.add_child(new_try_texture)
 
