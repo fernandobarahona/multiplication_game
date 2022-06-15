@@ -19,4 +19,5 @@ size_flags_vertical = 1
 margin_right = 180.0
 margin_bottom = 35.0
 rect_min_size = Vector2( 0, 10 )
+custom_constants/separation = -21
 alignment = 1
