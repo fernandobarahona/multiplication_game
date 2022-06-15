@@ -6,7 +6,7 @@ var _timer:Timer = null
 var _circular_progress_bar:CircularProgressBar = null
 
 var _minimal_step:float = 0.05
-onready var total_time:float = 5
+export onready var total_time:float = 5
 onready var elapsed_time:float = 0
 onready var remaining_time:float = total_time - elapsed_time
 

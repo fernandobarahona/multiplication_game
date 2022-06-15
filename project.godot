@@ -41,6 +41,10 @@ AnimatedSceneManager="*res://scenes_and_scripts/gl_singl__animated_scene_manager
 ObjectAnimationRepository="*res://scenes_and_scripts/gl_singl__object_animations_repository/object_animation_repository.gd"
 Signals="*res://scenes_and_scripts/gl_singl__signals/signals.gd"
 
+[debug]
+
+gdscript/warnings/return_value_discarded=false
+
 [display]
 
 window/size/width=1080

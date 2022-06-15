@@ -16,8 +16,9 @@ func _ready():
 
 func tilt_to_character(character:String) -> void:
 	self.text = character
-	$tiltingTimer.connect('timeout',self,"tilting_effect")
-	$tiltingTimer.start()
+	if $tiltingTimer.is_inside_tree() and not $tiltingTimer.is_connected('timeout',self,"tilting_effect"):
+		$tiltingTimer.connect('timeout',self,"tilting_effect")
+		$tiltingTimer.start()
 	
 func tilting_effect():
 	self.text = char_to_print

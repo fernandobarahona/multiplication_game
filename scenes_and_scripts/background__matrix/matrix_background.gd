@@ -22,6 +22,7 @@ func _ready():
 	_calculate_font_positions()
 	_create_every_column_and_positionate_it()
 	_columns_to_scene_with_random_time()
+	Signals.connect('new_question_generated',self,'tilt_chars_to_char')
 
 func _calculate_font_chars_max_size() -> void:
 	for ii in posibles_chars.size():
@@ -61,6 +62,8 @@ func _put_column_to_scene_tree() -> void:
 
 		_columns_not_in_screen.remove(column_to_add_to_screen_index)
 
-func tilt_chars_to_char(character_to_tilt_to:String) -> void:
+func tilt_chars_to_char(characters_to_tilt_to:String) -> void:
+	print(characters_to_tilt_to)
 	for column in _columns:
+		var character_to_tilt_to = characters_to_tilt_to[randi()%characters_to_tilt_to.length()]
 		column._tilt_chars_to_char(character_to_tilt_to)

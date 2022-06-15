@@ -34,6 +34,7 @@ texture_under = ExtResource( 7 )
 texture_over = ExtResource( 3 )
 texture_progress = ExtResource( 2 )
 fill_mode = 4
+tint_under = Color( 0.00392157, 0, 0, 1 )
 nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false

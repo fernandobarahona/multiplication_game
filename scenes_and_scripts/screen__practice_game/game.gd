@@ -11,12 +11,7 @@ onready var option_btn_array = [
 	get_node("%Option4")
 ]
 
-var tries = 0
-var correct_tries = 0
-var correct_porcentage = 0
-
 var correct_option_value
-
 
 func _ready():
 	var _err = _question_timer.connect("time_out", self, "evaluate_and_reset", [null])
