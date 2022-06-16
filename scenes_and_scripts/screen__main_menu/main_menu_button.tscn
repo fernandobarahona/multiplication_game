@@ -1,10 +1,11 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=1]
-[ext_resource path="res://scenes_and_scripts/screen__main_menu/home_assets_m_skin/01_multiplicarmdpi.png" type="Texture" id=2]
-[ext_resource path="res://scenes_and_scripts/screen__main_menu/home_assets_m_skin/01_multiplicarmdpi_HOVER.png" type="Texture" id=3]
+[ext_resource path="res://scenes_and_scripts/screen__main_menu/assets_m_skin/01_multiplicarmdpi.png" type="Texture" id=2]
+[ext_resource path="res://scenes_and_scripts/screen__main_menu/assets_m_skin/01_multiplicarmdpi_HOVER.png" type="Texture" id=3]
 [ext_resource path="res://assets/themes/newthemed.tres" type="Theme" id=4]
 [ext_resource path="res://assets/fonts/advanced_led_board_7/advanced_led_board-7.ttf" type="DynamicFontData" id=5]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 87

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes_and_scripts/gl_obj__go_to_settings_btn/go_to_settings_btn.gd" type="Script" id=1]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/button_settings.png" type="Texture" id=2]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/button_settings_hover.png" type="Texture" id=3]
+[ext_resource path="res://scenes_and_scripts/gl_obj__go_to_settings_btn/assets_m_skin/button_settings.png" type="Texture" id=2]
+[ext_resource path="res://scenes_and_scripts/gl_obj__go_to_settings_btn/assets_m_skin/button_settings_hover.png" type="Texture" id=3]
 
 [node name="GoToSettingsBtn" type="TextureButton"]
 margin_right = 40.0

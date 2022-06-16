@@ -7,7 +7,6 @@ func create_question():
 	var questionNum1 = randi()%11
 	var questionNum2 = randi()%11
 	var correct_option_value = questionNum1 * questionNum2
-	Signals.emit_signal("new_question_generated", str(correct_option_value))
 	return [questionNum1, questionNum2, correct_option_value]
 
 func create_options(correct_option_value):

@@ -3,9 +3,10 @@
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/option.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=2]
 [ext_resource path="res://assets/themes/newthemed.tres" type="Theme" id=3]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/pressed_option_btn.png" type="Texture" id=4]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/hover_option_btn.png" type="Texture" id=5]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/normal_option_btn.png" type="Texture" id=6]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/assets_m_skin/pressed_option_btn.png" type="Texture" id=4]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/assets_m_skin/hover_option_btn.png" type="Texture" id=5]
+[ext_resource path="res://scenes_and_scripts/screen__practice_game/assets_m_skin/normal_option_btn.png" type="Texture" id=6]
+
 
 [node name="opButton" type="TextureButton"]
 margin_right = 120.0

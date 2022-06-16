@@ -1,129 +1,148 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes_and_scripts/screen__register/register.gd" type="Script" id=2]
-[ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/back_to_menu_button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes_and_scripts/screen__register/assets_m_skin/fondo_REGISTRARmdpi.png" type="Texture" id=4]
+[ext_resource path="res://scenes_and_scripts/screen__register/assets_m_skin/crearNEW_HOVERmdpi.png" type="Texture" id=5]
+[ext_resource path="res://scenes_and_scripts/screen__register/assets_m_skin/boton REGISTRARmdpi.png" type="Texture" id=6]
+[ext_resource path="res://scenes_and_scripts/screen__register/assets_m_skin/boton registrarHOVERmdpi.png" type="Texture" id=7]
+[ext_resource path="res://assets/themes/matrix_background.tres" type="Theme" id=8]
+[ext_resource path="res://scenes_and_scripts/screen__register/assets_m_skin/crearNEWmdpi.png" type="Texture" id=9]
+[ext_resource path="res://scenes_and_scripts/m_skin_base/m_skin_base.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes_and_scripts/screen__register/assets_m_skin/divisionmdpi.png" type="Texture" id=12]
+[ext_resource path="res://assets/fonts/EHSMB.TTF" type="DynamicFontData" id=13]
 
-[node name="Register" type="MarginContainer"]
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 13 )
+
+[node name="Register" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.0
+margin_right = -1.0
 script = ExtResource( 2 )
-
-[node name="CenterContainer" type="CenterContainer" parent="."]
-margin_left = 19.0
-margin_top = 122.0
-margin_right = 340.0
-margin_bottom = 518.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_right = 321.0
-margin_bottom = 396.0
-theme = ExtResource( 1 )
-custom_constants/separation = 80
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_horizontal_guides_": [ 602.0, 830.0, 1060.0, 1091.0, 1153.0, 1416.0 ]
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 321.0
-margin_bottom = 286.0
+[node name="RegisterControl" type="Control" parent="."]
+margin_right = 1084.0
+margin_bottom = 1926.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer"]
-margin_right = 321.0
-margin_bottom = 286.0
-custom_constants/separation = 20
+[node name="m_skin_base" parent="RegisterControl" instance=ExtResource( 10 )]
+position = Vector2( 40, 32 )
 
-[node name="UserNameHContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_right = 321.0
-margin_bottom = 34.0
+[node name="RegisterBackground" type="Sprite" parent="RegisterControl"]
+position = Vector2( 549, 896 )
+texture = ExtResource( 4 )
 
-[node name="UserNameLabel" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/UserNameHContainer"]
-margin_top = 5.0
-margin_right = 98.0
-margin_bottom = 29.0
-text = "UserName"
+[node name="UserNameLabel" type="Label" parent="RegisterControl"]
+margin_left = 165.0
+margin_top = 434.0
+margin_right = 537.0
+margin_bottom = 500.0
+custom_colors/font_color = Color( 0.533333, 0.760784, 0.247059, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "NOMBRE:"
 
-[node name="UserNameText" type="LineEdit" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/UserNameHContainer"]
-margin_left = 102.0
-margin_right = 321.0
-margin_bottom = 34.0
+[node name="UserNameText" type="LineEdit" parent="RegisterControl"]
+margin_left = 159.0
+margin_top = 511.0
+margin_right = 885.0
+margin_bottom = 604.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 3
-placeholder_text = "Insert Your Name Here"
+theme = ExtResource( 8 )
+placeholder_text = "NUEVA CLAVE"
 placeholder_alpha = 0.388
 caret_blink = true
 caret_blink_speed = 0.5
 
-[node name="PasswordHContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 54.0
-margin_right = 321.0
-margin_bottom = 88.0
+[node name="PasswordLabel" type="Label" parent="RegisterControl"]
+margin_left = 165.0
+margin_top = 648.0
+margin_right = 537.0
+margin_bottom = 714.0
+custom_colors/font_color = Color( 0.533333, 0.760784, 0.247059, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "CLAVE:"
 
-[node name="PasswordLabel" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/PasswordHContainer"]
-margin_top = 5.0
-margin_right = 89.0
-margin_bottom = 29.0
-text = "PassWord"
-
-[node name="PasswordText" type="LineEdit" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/PasswordHContainer"]
-margin_left = 93.0
-margin_right = 321.0
-margin_bottom = 34.0
+[node name="PasswordText" type="LineEdit" parent="RegisterControl"]
+margin_left = 162.0
+margin_top = 733.0
+margin_right = 888.0
+margin_bottom = 826.0
 rect_min_size = Vector2( 200, 0 )
 size_flags_horizontal = 3
-placeholder_text = "Insert Your Password Here"
+theme = ExtResource( 8 )
+placeholder_text = "NUEVA CLAVE"
 placeholder_alpha = 0.388
 caret_blink = true
 caret_blink_speed = 0.5
 
-[node name="ConfirmPasswordHContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 108.0
-margin_right = 321.0
+[node name="PasswordConfirmLabel" type="Label" parent="RegisterControl"]
+margin_left = 165.0
+margin_top = 888.0
+margin_right = 789.0
+margin_bottom = 954.0
+custom_colors/font_color = Color( 0.533333, 0.760784, 0.247059, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "CONFIRMAR CLAVE:"
+
+[node name="PasswordConfirmText" type="LineEdit" parent="RegisterControl"]
+margin_left = 156.0
+margin_top = 975.0
+margin_right = 882.0
+margin_bottom = 1068.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+theme = ExtResource( 8 )
+placeholder_text = "NUEVA CLAVE"
+placeholder_alpha = 0.388
+caret_blink = true
+caret_blink_speed = 0.5
+
+[node name="Divisionmdpi" type="Sprite" parent="RegisterControl"]
+position = Vector2( 530, 1092 )
+texture = ExtResource( 12 )
+
+[node name="RegisterButton" type="TextureButton" parent="RegisterControl"]
+margin_left = 249.0
+margin_top = 1135.0
+margin_right = 1134.0
+margin_bottom = 1319.0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 7 )
+
+[node name="RegisterLabel" type="Label" parent="RegisterControl/RegisterButton"]
+margin_left = 198.0
+margin_top = 57.0
+margin_right = 680.0
+margin_bottom = 149.0
+custom_fonts/font = SubResource( 1 )
+text = "REGISTRARSE"
+
+[node name="GoToLogin" type="TextureButton" parent="RegisterControl"]
+margin_left = 196.0
+margin_top = 1394.0
+margin_right = 888.0
+margin_bottom = 1559.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 5 )
+expand = true
+stretch_mode = 2
+
+[node name="TextEdit_backtologi" type="Label" parent="RegisterControl/GoToLogin"]
+margin_left = 103.0
+margin_top = 50.0
+margin_right = 675.0
 margin_bottom = 142.0
-
-[node name="ConfirmPasswordLabel" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ConfirmPasswordHContainer"]
-margin_top = 5.0
-margin_right = 117.0
-margin_bottom = 29.0
-text = "Confirm PW"
-
-[node name="ConfirmPasswordText" type="LineEdit" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/ConfirmPasswordHContainer"]
-margin_left = 121.0
-margin_right = 321.0
-margin_bottom = 34.0
-rect_min_size = Vector2( 200, 0 )
-size_flags_horizontal = 3
-placeholder_text = "Insert Your Password Here"
-placeholder_alpha = 0.388
-caret_blink = true
-caret_blink_speed = 0.5
-
-[node name="NotificationLabel" type="Label" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 162.0
-margin_right = 321.0
-margin_bottom = 186.0
-
-[node name="RegisterButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 206.0
-margin_right = 321.0
-margin_bottom = 236.0
-text = "REGISTER"
-
-[node name="GoToLoginButton" type="Button" parent="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer"]
-margin_top = 256.0
-margin_right = 321.0
-margin_bottom = 286.0
-text = "Go Back To Login"
-
-[node name="Button" parent="CenterContainer/VBoxContainer" instance=ExtResource( 3 )]
-margin_top = 366.0
-margin_right = 321.0
-margin_bottom = 396.0
+custom_colors/font_color = Color( 0.533333, 0.760784, 0.247059, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "VOLVER A LOGIN"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/RegisterButton" to="." method="_on_RegisterButton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/CenterContainer/VBoxContainer/GoToLoginButton" to="." method="_on_GoToLoginButton_pressed"]
+[connection signal="pressed" from="RegisterControl/RegisterButton" to="." method="_on_RegisterButton_pressed"]
+[connection signal="pressed" from="RegisterControl/GoToLogin" to="." method="_on_GoToLogin_pressed"]
 [connection signal="request_completed" from="HTTPRequest" to="." method="_on_HTTPRequest_request_completed"]

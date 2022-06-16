@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes_and_scripts/gl_obj__circular_progress_bar/images/manecillasmdpi.png" type="Texture" id=3]
 [ext_resource path="res://scenes_and_scripts/gl_obj__circular_progress_bar/circular_progress_bar.gd" type="Script" id=4]
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=5]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/count_down_background.png" type="Texture" id=6]
+[ext_resource path="res://scenes_and_scripts/gl_obj__circular_progress_bar/images/count_down_background.png" type="Texture" id=6]
 [ext_resource path="res://scenes_and_scripts/gl_obj__circular_progress_bar/images/inactivomdpi.png" type="Texture" id=7]
 
 [node name="CenterContainer" type="Control"]

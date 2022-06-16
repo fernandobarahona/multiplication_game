@@ -2,8 +2,8 @@
 
 [ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/back_to_menu_button.gd" type="Script" id=1]
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=2]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/to_home_btn.png" type="Texture" id=3]
-[ext_resource path="res://scenes_and_scripts/screen__practice_game/scene_matrix_assets/button_home_hover.png" type="Texture" id=4]
+[ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/assets_m_skin/to_home_btn.png" type="Texture" id=3]
+[ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/assets_m_skin/button_home_hover.png" type="Texture" id=4]
 
 [node name="Button" type="TextureButton"]
 margin_right = 360.0
