@@ -25,7 +25,7 @@ func _load_backgrounds_scenes():
 		_posible_backgrounds_packed_scene_array.append(load(GlobalConstants.POSIBLE_BACKGROUNDS[ii]["path"]))
 	return
 	
-func _on_BakcgroundSelectButton_item_selected(index):
+func _on_BakcgroundSelectButton_item_selected(index : int):
 	BackgroundManager.goto_scene(_posible_backgrounds_packed_scene_array[index], get_node("/root/Main/BackgroundContainer"))
 	UserConfig.selected_background = GlobalConstants.POSIBLE_BACKGROUNDS[index]
 
