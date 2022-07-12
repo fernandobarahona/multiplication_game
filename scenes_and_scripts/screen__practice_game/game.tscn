@@ -34,16 +34,17 @@ theme = ExtResource( 5 )
 position = Vector2( 40, 24 )
 
 [node name="HUDContainer" type="Control" parent="ExternalVBoxContainer"]
-margin_top = 639.0
-margin_right = 1080.0
-margin_bottom = 711.0
+margin_left = 6.0
+margin_top = 695.0
+margin_right = 1086.0
+margin_bottom = 767.0
 size_flags_vertical = 0
 
 [node name="BackgroundRect" type="TextureRect" parent="ExternalVBoxContainer/HUDContainer"]
-margin_left = -192.0
-margin_top = -607.0
-margin_right = 1213.0
-margin_bottom = -189.0
+margin_left = 47.0
+margin_top = -603.0
+margin_right = 1043.0
+margin_bottom = -269.0
 texture = ExtResource( 12 )
 
 [node name="QuestionTimer" parent="ExternalVBoxContainer/HUDContainer" instance=ExtResource( 6 )]
@@ -66,9 +67,9 @@ texture = ExtResource( 2 )
 
 [node name="ScoreBar" parent="ExternalVBoxContainer/HUDContainer" instance=ExtResource( 9 )]
 margin_left = 782.0
-margin_top = -411.0
+margin_top = -401.0
 margin_right = 999.0
-margin_bottom = -339.0
+margin_bottom = -329.0
 
 [node name="QuestionContainer" type="Control" parent="ExternalVBoxContainer"]
 margin_left = 8.0
@@ -84,13 +85,13 @@ margin_bottom = 121.0
 texture = ExtResource( 16 )
 
 [node name="QuestionText" type="Label" parent="ExternalVBoxContainer/QuestionContainer"]
-margin_left = 176.0
+margin_left = 158.0
 margin_top = -16.0
-margin_right = 619.0
+margin_right = 646.0
 margin_bottom = 64.0
 custom_colors/font_color = Color( 0, 0.74902, 0, 1 )
 custom_fonts/font = ExtResource( 15 )
-text = "Cuanto es?"
+text = "¿Cuánto es?"
 align = 1
 valign = 1
 

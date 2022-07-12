@@ -1,14 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes_and_scripts/screen__config_menu/background_select_button.gd" type="Script" id=1]
 [ext_resource path="res://scenes_and_scripts/gl_obj__go_to_main_menu_btn/back_to_menu_button.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/themes/blue_theme.tres" type="Theme" id=3]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/m_skin_assets/CONFIG_.jpg" type="Texture" id=4]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/background_preview/background_preview.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/m_skin_assets/selector_up.png" type="Texture" id=6]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/background_preview/03mathparallax.jpg" type="Texture" id=7]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/background_preview/01boring.jpg" type="Texture" id=8]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/m_skin_assets/divideSelectormdpi.png" type="Texture" id=9]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/m_skin_assets/BASE 2mdpi.png" type="Texture" id=10]
+[ext_resource path="res://assets/fonts/EHSMB.TTF" type="DynamicFontData" id=11]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/m_skin_assets/starsmdpi.png" type="Texture" id=12]
+[ext_resource path="res://scenes_and_scripts/screen__config_menu/m_skin_assets/selector_down.png" type="Texture" id=13]
+[ext_resource path="res://scenes_and_scripts/m_skin_base/m_skin_base.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes_and_scripts/m_skin_base/FRAMEmdpi.png" type="Texture" id=15]
 
-[node name="ConfigMenu" type="MarginContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 11 )
+
+[node name="ConfigMenu" type="Node2D"]
+
+[node name="m_skin_base" parent="." instance=ExtResource( 14 )]
+position = Vector2( 40, 28 )
+
+[node name="SkinBackground" parent="m_skin_base" index="0"]
+texture = ExtResource( 15 )
 
 [node name="Control" type="Control" parent="."]
+visible = false
 margin_right = 1080.0
 margin_bottom = 1920.0
 theme = ExtResource( 3 )
@@ -42,4 +63,91 @@ margin_top = 946.0
 margin_right = 711.0
 margin_bottom = 1081.0
 
+[node name="MenuContainer" type="Node2D" parent="."]
+
+[node name="SceneExampleRect" type="TextureRect" parent="MenuContainer"]
+visible = false
+margin_right = 1068.0
+margin_bottom = 1924.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="MenuContainerRect" type="TextureRect" parent="MenuContainer"]
+margin_left = 72.0
+margin_top = 576.0
+margin_right = 1023.0
+margin_bottom = 1634.0
+texture = ExtResource( 10 )
+
+[node name="SkinLabel" type="Label" parent="MenuContainer"]
+margin_left = 135.0
+margin_top = 602.0
+margin_right = 707.0
+margin_bottom = 694.0
+custom_colors/font_color = Color( 0.533333, 0.760784, 0.247059, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "SKIN:"
+
+[node name="BackgroundPreview" parent="MenuContainer" instance=ExtResource( 5 )]
+margin_left = 128.0
+margin_top = 672.0
+margin_right = 384.0
+margin_bottom = 1088.0
+
+[node name="BackgroundPreview2" parent="MenuContainer" instance=ExtResource( 5 )]
+margin_left = 404.0
+margin_top = 671.0
+margin_right = 660.0
+margin_bottom = 1087.0
+texture_normal = ExtResource( 7 )
+
+[node name="BackgroundPreview3" parent="MenuContainer" instance=ExtResource( 5 )]
+margin_left = 681.0
+margin_top = 669.0
+margin_right = 937.0
+margin_bottom = 1085.0
+texture_normal = ExtResource( 8 )
+stretch_mode = 5
+
+[node name="BackgroundSelector" type="Sprite" parent="MenuContainer"]
+position = Vector2( 240, 1136 )
+texture = ExtResource( 6 )
+
+[node name="DivisionRect" type="TextureRect" parent="MenuContainer"]
+margin_left = 94.0
+margin_top = 1160.0
+margin_right = 968.0
+margin_bottom = 1200.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="SkinLabel2" type="Label" parent="MenuContainer"]
+margin_left = 130.0
+margin_top = 1258.0
+margin_right = 910.0
+margin_bottom = 1350.0
+custom_colors/font_color = Color( 0.533333, 0.760784, 0.247059, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "NIVEL DE DIFICULTAD:"
+
+[node name="DivisionRect2" type="TextureRect" parent="MenuContainer"]
+margin_left = 88.0
+margin_top = 1344.0
+margin_right = 966.0
+margin_bottom = 1384.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 5
+
+[node name="DifficultySelector" type="Sprite" parent="MenuContainer"]
+position = Vector2( 579, 1368 )
+texture = ExtResource( 13 )
+
+[node name="DifficultyStars" type="Sprite" parent="MenuContainer"]
+position = Vector2( 652, 1417 )
+texture = ExtResource( 12 )
+
 [connection signal="item_selected" from="Control/BakcgroundSelectButton" to="Control/BakcgroundSelectButton" method="_on_BakcgroundSelectButton_item_selected"]
+
+[editable path="m_skin_base"]

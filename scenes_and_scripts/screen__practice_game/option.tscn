@@ -7,7 +7,6 @@
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/assets_m_skin/hover_option_btn.png" type="Texture" id=5]
 [ext_resource path="res://scenes_and_scripts/screen__practice_game/assets_m_skin/normal_option_btn.png" type="Texture" id=6]
 
-
 [node name="opButton" type="TextureButton"]
 margin_right = 120.0
 margin_bottom = 120.0
